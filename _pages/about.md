@@ -32,8 +32,7 @@ My research interests are:
 ---
 
 ## Selected highlights
-- **TMLR ’24:** *Scaling Up Bayesian Neural Networks with Neural Networks (FBNN).*  
-- **Stroke ’24:** *Genetic Variation and Stroke Recovery (STRONG Study).*  
+- **JSM 2024 "Advances in Inference and Theory for Bayesian Neural Networks"**  
 - **NeurIPS ’25 Workshops (Spotlight):** Two papers accepted — AI4Science (The Reach and Limits of AI for Scientific Discovery) & New Perspectives in Advancing Graph Machine Learning (NPGML)
 
 ### NeurIPS ’25 Workshop Papers (details)
