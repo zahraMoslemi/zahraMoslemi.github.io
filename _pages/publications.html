@@ -56,10 +56,3 @@ will render those too. For now, we list items explicitly from the CV.
 
 <hr/>
 
-<!-- Optional: automatically render any posts you add later in _publications -->
-{% if site.publications and site.publications != empty %}
-  <h2>More Publications</h2>
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
