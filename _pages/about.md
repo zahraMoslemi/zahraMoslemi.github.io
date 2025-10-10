@@ -34,17 +34,16 @@ My research interests are:
 ## Selected highlights
 - **TMLR ’24:** *Scaling Up Bayesian Neural Networks with Neural Networks (FBNN).*  
 - **Stroke ’24:** *Genetic Variation and Stroke Recovery (STRONG Study).*  
-- **NeurIPS ’25 (Spotlight):** Thrilled to share that two of my papers were accepted to NeurIPS 2025 workshops “AI4Science” and “New Perspectives in Graph Machine Learning (NPGML)”! 🎉
+- **NeurIPS ’25 Workshops (Spotlight):** Two papers accepted — AI4Science (The Reach and Limits of AI for Scientific Discovery) & New Perspectives in Advancing Graph Machine Learning (NPGML)
 
-Paper 1 (AI4Science):
-**An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding**
- with Ziyi Liang, Norbert J. Fortin, and Babak Shahbaba
-We introduce a subject-to-subject alignment approach for hippocampal LFP decoding. By extracting task-relevant “supernodes” and linking only functionally similar activity patterns across animals, the model boosts trial-level decoding and reveals interpretable signatures (e.g., distal CA1 selectivity) rather than mixing across dissimilar regions.
+<details>
+<summary>One-paragraph summaries</summary>
 
-Paper 2 (NPGML):
-**Multi-Graph Meta-Transformer (MGMT)**
- with Ziyi Liang, Norbert J. Fortin, and Babak Shahbaba
-A unified framework for multi-graph learning that couples depth-aware Graph Transformers (per graph) with a meta-graph over learned supernodes to reason jointly across heterogeneous graphs. The design is scalable and built for interpretability; supernodes and superedges expose which substructures and cross-graph alignments drive predictions, while delivering consistent gains on synthetic and real datasets.
+**An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding** (AI4Science). With Ziyi Liang, Norbert J. Fortin, and Babak Shahbaba. We align hippocampal LFP across subjects by extracting task-relevant supernodes and linking functionally similar patterns, boosting trial-level decoding and revealing interpretable signatures (e.g., distal CA1 selectivity).
+
+**Multi-Graph Meta-Transformer (MGMT)** (NPGML). With Ziyi Liang, Norbert J. Fortin, and Babak Shahbaba. A unified framework coupling depth-aware Graph Transformers (per graph) with a meta-graph over supernodes to reason across heterogeneous graphs—scalable, interpretable, and effective on synthetic and real datasets.
+</details>
+
 
 ---
 
