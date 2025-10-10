@@ -7,7 +7,7 @@ author_profile: true
 
 {% if site.author.googlescholar %}
 <div class="wordwrap">
-  You can also find my articles on <a href="{{ https://scholar.google.com/citations?user=jbJTkg4AAAAJ&hl=en }}">my Google Scholar profile</a>.
+  You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.
 </div>
 {% endif %}
 
@@ -21,27 +21,28 @@ will render those too. For now, we list items explicitly from the CV.
 <h2>Journal Articles</h2>
 <ul>
   <li>
-    <strong>Scaling Up Bayesian Neural Networks with Neural Networks (FBNN)</strong><br/>
+    <a href="https://openreview.net/forum?id=cD209UgOX7"><strong>Scaling Up Bayesian Neural Networks with Neural Networks (FBNN)</strong></a><br/>
     Z. Moslemi. <em>Transactions on Machine Learning Research (TMLR)</em>, 2024.
   </li>
   <li>
-    <strong>Genetic Variation and Stroke Recovery: The STRONG Study</strong><br/>
+    <a href="https://www.ahajournals.org/doi/full/10.1161/STROKEAHA.124.047643"><strong>Genetic Variation and Stroke Recovery: The STRONG Study</strong></a><br/>
     Z. Moslemi. <em>Stroke</em>, 2024.
-    <a href="https://www.ahajournals.org/doi/full/10.1161/STROKEAHA.124.047643">Publisher</a>
   </li>
 </ul>
 
 <h2>Conference & Workshop Papers</h2>
 <ul>
   <li>
-    <strong>An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding</strong><br/>
+    <a href="https://ai4sciencecommunity.github.io/neurips25"><strong>An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding</strong></a><br/>
     Z. Moslemi, Z. Liang, N. J. Fortin, B. Shahbaba. <em>NeurIPS 2025 AI4Science Workshop</em> (Spotlight), 2025.
-    <a href="https://ai4sciencecommunity.github.io/neurips25">Workshop</a>
   </li>
   <li>
-    <strong>MGMT: Multi-Graph Meta-Transformer</strong><br/>
+    <a href="https://neurips.cc/virtual/2025/workshop/109579"><strong>MGMT: Multi-Graph Meta-Transformer</strong></a><br/>
     Z. Moslemi, Z. Liang, N. J. Fortin, B. Shahbaba. <em>NeurIPS 2025 New Perspectives in Graph Machine Learning (NPGML)</em> (Spotlight), 2025. <em>ICLR 2025</em> under review.
-    <a href="https://neurips.cc/virtual/2025/workshop/109579">Workshop</a>
+  </li>
+  <li>
+    <a href="https://www.researchgate.net/profile/Sara-Se-3/publication/378858182_Deep_learning-based_retinal_abnormality_detection_from_OCT_images_with_limited_data/links/65ee0c20aaf8d548dcc0e518/Deep-learning-based-retinal-abnormality-detection-from-OCT-images-with-limited-data.pdf"><strong>Deep learning-based retinal abnormality detection from OCT images with limited data</strong></a><br/>
+    (Medical imaging). 
   </li>
 </ul>
 
@@ -55,5 +56,10 @@ will render those too. For now, we list items explicitly from the CV.
 
 <hr/>
 
-
-
+<!-- Optional: automatically render any posts you add later in _publications -->
+{% if site.publications and site.publications != empty %}
+  <h2>More Publications</h2>
+  {% for post in site.publications reversed %}
+    {% include archive-single.html %}
+  {% endfor %}
+{% endif %}
