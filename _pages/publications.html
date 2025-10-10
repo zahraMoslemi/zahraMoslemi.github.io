@@ -6,31 +6,54 @@ author_profile: true
 ---
 
 {% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
+<div class="wordwrap">
+  You can also find my articles on <a href="{{ https://scholar.google.com/citations?user=jbJTkg4AAAAJ&hl=en }}">my Google Scholar profile</a>.
+</div>
 {% endif %}
 
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
+<!--
+If you later add markdown files to the _publications collection, the loop at the bottom
+will render those too. For now, we list items explicitly from the CV.
+-->
+
+<h2>Journal Articles</h2>
+<ul>
+  <li>
+    <strong>Scaling Up Bayesian Neural Networks with Neural Networks (FBNN)</strong><br/>
+    Z. Moslemi. <em>Transactions on Machine Learning Research (TMLR)</em>, 2024.
+  </li>
+  <li>
+    <strong>Genetic Variation and Stroke Recovery: The STRONG Study</strong><br/>
+    Z. Moslemi. <em>Stroke</em>, 2024.
+    <a href="https://www.ahajournals.org/doi/full/10.1161/STROKEAHA.124.047643">Publisher</a>
+  </li>
+</ul>
+
+<h2>Conference & Workshop Papers</h2>
+<ul>
+  <li>
+    <strong>An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding</strong><br/>
+    Z. Moslemi, Z. Liang, N. J. Fortin, B. Shahbaba. <em>NeurIPS 2025 AI4Science Workshop</em> (Spotlight), 2025.
+    <a href="https://ai4sciencecommunity.github.io/neurips25">Workshop</a>
+  </li>
+  <li>
+    <strong>MGMT: Multi-Graph Meta-Transformer</strong><br/>
+    Z. Moslemi, Z. Liang, N. J. Fortin, B. Shahbaba. <em>NeurIPS 2025 New Perspectives in Graph Machine Learning (NPGML)</em> (Spotlight), 2025. <em>ICLR 2025</em> under review.
+    <a href="https://neurips.cc/virtual/2025/workshop/109579">Workshop</a>
+  </li>
+</ul>
+
+<h2>Under Review / In Preparation</h2>
+<ul>
+  <li>
+    <strong>POLARIS: Orchestrating Synthesized Human and AI-Agentic Workflows</strong><br/>
+    Z. Moslemi, K. Koneru, S. Kumar. <em>AAAI 2026</em> (under review).
+  </li>
+</ul>
+
+<hr/>
 
 
 
