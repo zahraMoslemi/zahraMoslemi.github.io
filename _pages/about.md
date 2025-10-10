@@ -36,13 +36,14 @@ My research interests are:
 - **Stroke ’24:** *Genetic Variation and Stroke Recovery (STRONG Study).*  
 - **NeurIPS ’25 Workshops (Spotlight):** Two papers accepted — AI4Science (The Reach and Limits of AI for Scientific Discovery) & New Perspectives in Advancing Graph Machine Learning (NPGML)
 
-<details>
-<summary>One-paragraph summaries</summary>
+**An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding** (AI4Science). 
+With Ziyi Liang, Norbert J. Fortin, and Babak Shahbaba. 
+We align hippocampal LFP across subjects by extracting task-relevant supernodes and linking functionally similar patterns, boosting trial-level decoding and revealing interpretable signatures (e.g., distal CA1 selectivity).
 
-**An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding** (AI4Science). With Ziyi Liang, Norbert J. Fortin, and Babak Shahbaba. We align hippocampal LFP across subjects by extracting task-relevant supernodes and linking functionally similar patterns, boosting trial-level decoding and revealing interpretable signatures (e.g., distal CA1 selectivity).
+**Multi-Graph Meta-Transformer (MGMT)** (NPGML). 
+With Ziyi Liang, Norbert J. Fortin, and Babak Shahbaba. 
+A unified framework coupling depth-aware Graph Transformers (per graph) with a meta-graph over supernodes to reason across heterogeneous graphs—scalable, interpretable, and effective on synthetic and real datasets.
 
-**Multi-Graph Meta-Transformer (MGMT)** (NPGML). With Ziyi Liang, Norbert J. Fortin, and Babak Shahbaba. A unified framework coupling depth-aware Graph Transformers (per graph) with a meta-graph over supernodes to reason across heterogeneous graphs—scalable, interpretable, and effective on synthetic and real datasets.
-</details>
 
 
 ---
