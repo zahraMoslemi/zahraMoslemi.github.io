@@ -32,9 +32,10 @@ My research interests are:
 ---
 
 ## Selected highlights
-- **JSM 2024**  Invited Talks And Conference Presentations "Advances in Inference and Theory for Bayesian Neural Networks" and "Recent Advances in Ensemble Learning" sessions.
 - **JSM 2024:** Presented two contributed talks in the sessions “Advances in Inference and Theory for Bayesian Neural Networks” and “Recent Advances in Ensemble Learning.”
+- **NeurIPS ’25 Workshops (Spotlight):** Two papers accepted — AI4Science (The Reach and Limits of AI for Scientific Discovery) & New Perspectives in Advancing Graph Machine Learning (NPGML)
 
+  
 ### NeurIPS ’25 Workshop Papers (details)
 <details>
   <summary><strong>AI4Science — An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding</strong> (with Z. Liang, N. J. Fortin, B. Shahbaba)</summary>
