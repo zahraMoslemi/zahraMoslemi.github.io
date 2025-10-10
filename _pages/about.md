@@ -7,8 +7,6 @@ redirect_from:
   - /about.html
 ---
 
-# Welcome!
-
 I am a fourth-year Statistics PhD student at the University of California, Irvine. My research advisor is Prof. Babak Shahbaba. My research interests are:
 - Artificial Intelligence and Multi-Agent Systems :contentReference[oaicite:0]{index=0}  
 - Machine Learning & Deep Learning (Transformers/LLMs) :contentReference[oaicite:1]{index=1}
