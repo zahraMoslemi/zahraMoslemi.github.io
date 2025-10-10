@@ -36,13 +36,20 @@ My research interests are:
 - **Stroke ’24:** *Genetic Variation and Stroke Recovery (STRONG Study).*  
 - **NeurIPS ’25 Workshops (Spotlight):** Two papers accepted — AI4Science (The Reach and Limits of AI for Scientific Discovery) & New Perspectives in Advancing Graph Machine Learning (NPGML)
 
-**An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding** (AI4Science). 
-With Ziyi Liang, Norbert J. Fortin, and Babak Shahbaba. 
-We align hippocampal LFP across subjects by extracting task-relevant supernodes and linking functionally similar patterns, boosting trial-level decoding and revealing interpretable signatures (e.g., distal CA1 selectivity).
+### NeurIPS ’25 Workshop Papers (details)
+<details>
+  <summary><strong>AI4Science — An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding</strong> (with Z. Liang, N. J. Fortin, B. Shahbaba)</summary>
+  <p style="margin-top:.5rem;">
+    We propose subject-to-subject alignment for hippocampal LFP decoding by extracting task-relevant <em>supernodes</em> and linking only functionally similar activity patterns across animals. The approach improves trial-level decoding and yields interpretable signatures (e.g., distal CA1 selectivity) without mixing across dissimilar regions.
+  </p>
+</details>
 
-**Multi-Graph Meta-Transformer (MGMT)** (NPGML). 
-With Ziyi Liang, Norbert J. Fortin, and Babak Shahbaba. 
-A unified framework coupling depth-aware Graph Transformers (per graph) with a meta-graph over supernodes to reason across heterogeneous graphs—scalable, interpretable, and effective on synthetic and real datasets.
+<details>
+  <summary><strong>NPGML — Multi-Graph Meta-Transformer (MGMT)</strong> (with Z. Liang, N. J. Fortin, B. Shahbaba)</summary>
+  <p style="margin-top:.5rem;">
+    MGMT couples depth-aware Graph Transformers (per graph) with a meta-graph over learned supernodes to reason jointly across heterogeneous graphs. It scales, stays interpretable (supernodes/superedges expose driving substructures and alignments), and delivers consistent gains on synthetic and real datasets.
+  </p>
+</details>
 
 
 
