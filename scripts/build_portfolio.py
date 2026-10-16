@@ -142,7 +142,8 @@ cvbody='''<section class="page-intro"><p class="eyebrow">Curriculum vitae</p><h1
 <section class="cv-summary"><a class="button primary" href="/files/Zahra_Moslemi_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
 <dl><dt>Education</dt><dd>PhD candidate in Statistics, UC Irvine. Expected January 2027. MS in Statistics, UC Irvine; BS in Industrial Engineering, Sharif University of Technology.</dd><dt>Research</dt><dd>Bayesian machine learning, uncertainty quantification, biomedical AI, graph representation learning, and LLM agents and evaluation.</dd><dt>Industry</dt><dd>Research Scientist internships at ClearNote Health (2024 and 2026) and Accenture’s Center for Advanced AI (2025).</dd><dt>Opportunities</dt><dd>Research scientist, applied scientist, research engineering, and postdoctoral positions. Open to U.S. locations.</dd><dt>Contact</dt><dd><a href="mailto:zmoslemi@uci.edu">zmoslemi@uci.edu</a></dd></dl></section>'''
 
-pages=[('_pages/about.md','/','Research & Applied Machine Learning',home),('_pages/publications.html','/publications/','Publications',pubbody),('_pages/cv.md','/cv/','Curriculum Vitae',cvbody)]
+# Keep generated documents as HTML so Jekyll does not run them through Markdown.
+pages=[('_pages/about.html','/','Research & Applied Machine Learning',home),('_pages/publications.html','/publications/','Publications',pubbody),('_pages/cv.html','/cv/','Curriculum Vitae',cvbody)]
 PREVIEW.mkdir(exist_ok=True)
 for filename,path,title,body in pages:
     html="\n".join(line.rstrip() for line in shell(title,path,body).splitlines())+"\n"
