@@ -1,58 +1,77 @@
 ---
-layout: archive
+layout: null
 title: "Publications"
 permalink: /publications/
-author_profile: true
 ---
-
-{% if site.author.googlescholar %}
-<div class="wordwrap">
-  You can also find my articles on <a href="{{ site.author.googlescholar }}">my Google Scholar profile</a>.
-</div>
-{% endif %}
-
-{% include base_path %}
-
-<!--
-If you later add markdown files to the _publications collection, the loop at the bottom
-will render those too. For now, we list items explicitly from the CV.
--->
-
-<h2>Journal Articles</h2>
-<ul>
-  <li>
-    <a href="https://openreview.net/forum?id=cD209UgOX7"><strong>Scaling Up Bayesian Neural Networks with Neural Networks (FBNN)</strong></a><br/>
-    Z. Moslemi. <em>Transactions on Machine Learning Research (TMLR)</em>, 2024.
-  </li>
-  <li>
-    <a href="https://www.ahajournals.org/doi/full/10.1161/STROKEAHA.124.047643"><strong>Genetic Variation and Stroke Recovery: The STRONG Study</strong></a><br/>
-    Z. Moslemi. <em>Stroke</em>, 2024.
-  </li>
-</ul>
-
-<h2>Conference & Workshop Papers</h2>
-<ul>
-  <li>
-    <a href="https://ai4sciencecommunity.github.io/neurips25"><strong>An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding</strong></a><br/>
-    Z. Moslemi, Z. Liang, N. J. Fortin, B. Shahbaba. <em>NeurIPS 2025 AI4Science Workshop</em> (Spotlight), 2025.
-  </li>
-  <li>
-    <a href="https://neurips.cc/virtual/2025/workshop/109579"><strong>MGMT: Multi-Graph Meta-Transformer</strong></a><br/>
-    Z. Moslemi, Z. Liang, N. J. Fortin, B. Shahbaba. <em>NeurIPS 2025 New Perspectives in Graph Machine Learning (NPGML)</em> (Spotlight), 2025. <em>ICLR 2025</em> under review.
-  </li>
-  <li>
-    <a href="https://www.researchgate.net/profile/Sara-Se-3/publication/378858182_Deep_learning-based_retinal_abnormality_detection_from_OCT_images_with_limited_data/links/65ee0c20aaf8d548dcc0e518/Deep-learning-based-retinal-abnormality-detection-from-OCT-images-with-limited-data.pdf"><strong>Deep learning-based retinal abnormality detection from OCT images with limited data</strong></a><br/>
-    (Medical imaging). 
-  </li>
-</ul>
-
-<h2>Under Review / In Preparation</h2>
-<ul>
-  <li>
-    <strong>POLARIS: Orchestrating Synthesized Human and AI-Agentic Workflows</strong><br/>
-    Z. Moslemi, K. Koneru, S. Kumar. <em>AAAI 2026</em> (under review).
-  </li>
-</ul>
-
-<hr/>
-
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Publications | Zahra Moslemi</title><meta name="description" content="Zahra Moslemi, Statistics PhD candidate at UC Irvine. Research in Bayesian machine learning, uncertainty quantification, biomedical AI, and reliable LLM agents.">
+<link rel="canonical" href="https://zahramoslemi.github.io/publications/"><meta name="theme-color" content="#172f34">
+<meta property="og:type" content="website"><meta property="og:title" content="Publications | Zahra Moslemi">
+<meta property="og:description" content="Zahra Moslemi, Statistics PhD candidate at UC Irvine. Research in Bayesian machine learning, uncertainty quantification, biomedical AI, and reliable LLM agents."><meta property="og:url" content="https://zahramoslemi.github.io/publications/"><meta property="og:image" content="https://zahramoslemi.github.io/images/profile.jpg">
+<meta name="twitter:card" content="summary"><link rel="icon" href="/images/zm-monogram.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/portfolio.css"><script src="/assets/js/portfolio.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Zahra Moslemi", "url": "https://zahramoslemi.github.io", "image": "https://zahramoslemi.github.io/images/profile.jpg", "jobTitle": "PhD candidate in Statistics", "affiliation": {"@type": "CollegeOrUniversity", "name": "University of California, Irvine"}, "email": "mailto:zmoslemi@uci.edu", "sameAs": ["https://scholar.google.com/citations?user=jbJTkg4AAAAJ&hl=en", "https://github.com/zahraMoslemi", "https://www.linkedin.com/in/zahra-moslemi/"]}</script></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/" aria-label="Zahra Moslemi, home"><span aria-hidden="true">Z</span>Zahra Moslemi</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+<nav class="nav" id="main-navigation" aria-label="Main navigation"><a href="/#research">Research</a><a href="/publications/" aria-current="page">Publications</a><a href="/#experience">Experience</a><a class="nav-cv" href="/cv/">CV <span aria-hidden="true">↗</span></a></nav></div></header>
+<main id="main" class="wrap"><section class="page-intro"><p class="eyebrow">Research output</p><h1>Publications &amp; preprints.</h1><p>My work spans statistical machine learning, biomedical applications, and reliable agentic systems. Publication and review status are listed with each paper.</p><a class="text-link" href="https://scholar.google.com/citations?user=jbJTkg4AAAAJ&hl=en">Google Scholar ↗</a></section>
+<section class="publications-page" aria-label="Research papers"><div class="filters" aria-label="Filter papers by topic"><button data-filter="all" aria-pressed="true">All papers</button><button data-filter="uncertainty" aria-pressed="false">Bayesian ML &amp; uncertainty</button><button data-filter="science" aria-pressed="false">Health &amp; science</button><button data-filter="agents" aria-pressed="false">LLM agents</button></div><p class="result-count" id="result-count" role="status" aria-live="polite">8 papers</p><article class="paper" id="scope" data-topics="uncertainty">
+      <div class="paper-meta"><strong>2026</strong><span>Preprint</span></div>
+      <div><h2><a href="https://arxiv.org/abs/2610.17146">SCOPE Before You Sample: Conformal Scores Guide Posterior Exploration for Fast and Calibrated Bayesian Predictive Inference</a></h2>
+      <p class="authors"><strong>Zahra Moslemi</strong>, Ziyi Liang, Babak Shahbaba</p>
+      <p class="venue">arXiv preprint · Under review at AISTATS 2027</p>
+      <p class="summary">Conformal scores identify the posterior directions that matter for predictive regions, combining targeted MCMC with a variational approximation and calibrated coverage.</p>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2610.17146">Read paper <span aria-hidden="true">↗</span></a>
+      <a href="https://arxiv.org/pdf/2610.17146">PDF <span aria-hidden="true">↗</span></a></div></div></article><article class="paper" id="mgmt" data-topics="science">
+      <div class="paper-meta"><strong>2026</strong><span>Preprint</span></div>
+      <div><h2><a href="https://arxiv.org/abs/2601.22593">Heterogeneous Graph Alignment for Joint Reasoning and Interpretability</a></h2>
+      <p class="authors"><strong>Zahra Moslemi</strong>, Ziyi Liang, Norbert Fortin, Babak Shahbaba</p>
+      <p class="venue">arXiv preprint · Multi-Graph Meta-Transformer (MGMT)</p>
+      <p class="summary">A shared meta-graph aligns attention-selected supernodes across heterogeneous graphs, supporting joint prediction and interpretable scientific analysis. Related MGMT work was presented at the NeurIPS 2025 NPGML Workshop (Spotlight).</p>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2601.22593">Read paper <span aria-hidden="true">↗</span></a>
+      <a href="https://arxiv.org/pdf/2601.22593">PDF <span aria-hidden="true">↗</span></a></div></div></article><article class="paper" id="polaris" data-topics="agents">
+      <div class="paper-meta"><strong>2026</strong><span>Workshop</span></div>
+      <div><h2><a href="https://arxiv.org/abs/2601.11816">POLARIS: Typed Planning and Governed Execution for Agentic AI in Back-Office Automation</a></h2>
+      <p class="authors"><strong>Zahra Moslemi</strong>, Keerthi Koneru, Yen-Ting Lee, Sheethal Kumar, Ramesh Radhakrishnan</p>
+      <p class="venue">AAAI 2026 · Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks</p>
+      <p class="summary">Typed plan synthesis and validated execution bring policy checks, bounded repair, and traceable decision-making to enterprise agent workflows.</p>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2601.11816">Read paper <span aria-hidden="true">↗</span></a>
+      <a href="https://arxiv.org/pdf/2601.11816">PDF <span aria-hidden="true">↗</span></a></div></div></article><article class="paper" id="aema" data-topics="agents">
+      <div class="paper-meta"><strong>2026</strong><span>Workshop</span></div>
+      <div><h2><a href="https://arxiv.org/abs/2601.11903">AEMA: Verifiable Evaluation Framework for Trustworthy and Controlled Agentic LLM Systems</a></h2>
+      <p class="authors">Yen-Ting Lee, Keerthi Koneru, <strong>Zahra Moslemi</strong>, Sheethal Kumar, Ramesh Radhakrishnan</p>
+      <p class="venue">AAAI 2026 · Workshop on Trust and Control in Agentic AI</p>
+      <p class="summary">An auditable framework for planning, running, and aggregating evaluations of multi-agent workflows, with human oversight and reproducible evaluation records.</p>
+      <div class="paper-links"><a href="https://arxiv.org/abs/2601.11903">Read paper <span aria-hidden="true">↗</span></a>
+      <a href="https://arxiv.org/pdf/2601.11903">PDF <span aria-hidden="true">↗</span></a></div></div></article><article class="paper" id="crossgraph" data-topics="science">
+      <div class="paper-meta"><strong>2025</strong><span>Workshop</span></div>
+      <div><h2><a href="https://openreview.net/forum?id=CBcubwXMhA">Multi-Graph Meta-Transformer: An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding</a></h2>
+      <p class="authors"><strong>Zahra Moslemi</strong>, Ziyi Liang, Norbert J. Fortin, Babak Shahbaba</p>
+      <p class="venue">NeurIPS 2025 · AI4Science Workshop · Spotlight · Best Poster Runner-up</p>
+      <p class="summary">Functional alignment across heterogeneous neural recordings connects task-relevant structures across subjects while preserving interpretable graph representations.</p>
+      <div class="paper-links"><a href="https://openreview.net/forum?id=CBcubwXMhA">Read paper <span aria-hidden="true">↗</span></a>
+      <a href="https://openreview.net/pdf/b80baee1e96105401fdc5397af5723ebdb7054a1.pdf">PDF <span aria-hidden="true">↗</span></a></div></div></article><article class="paper" id="fbnn" data-topics="uncertainty">
+      <div class="paper-meta"><strong>2024</strong><span>Journal</span></div>
+      <div><h2><a href="https://openreview.net/forum?id=cD209Ug0X7">Scaling Up Bayesian Neural Networks with Neural Networks</a></h2>
+      <p class="authors"><strong>Zahra Moslemi</strong>, Yang Meng, Shiwei Lan, Babak Shahbaba</p>
+      <p class="venue">Transactions on Machine Learning Research (TMLR)</p>
+      <p class="summary">A calibration–emulation–sampling strategy accelerates Bayesian neural network inference while retaining predictive accuracy and uncertainty estimation.</p>
+      <div class="paper-links"><a href="https://openreview.net/forum?id=cD209Ug0X7">Read paper <span aria-hidden="true">↗</span></a>
+      <a href="https://arxiv.org/pdf/2312.11799">PDF <span aria-hidden="true">↗</span></a></div></div></article><article class="paper" id="strong" data-topics="science">
+      <div class="paper-meta"><strong>2024</strong><span>Journal</span></div>
+      <div><h2><a href="https://doi.org/10.1161/STROKEAHA.124.047643">Genetic Variation and Stroke Recovery: The STRONG Study</a></h2>
+      <p class="authors">Steven C. Cramer, Livia Parodi, <strong>Zahra Moslemi</strong>, Robynne G. Braun, Chad M. Aldridge, Babak Shahbaba, Jonathan Rosand, E. Alison Holman; STRONG Study Investigators</p>
+      <p class="venue">Stroke · 55(8):2094–2102</p>
+      <p class="summary">A prospective study across 28 U.S. stroke centers investigating associations between genetic variation and recovery outcomes.</p>
+      <div class="paper-links"><a href="https://doi.org/10.1161/STROKEAHA.124.047643">Read paper <span aria-hidden="true">↗</span></a>
+      </div></div></article><article class="paper" id="oct" data-topics="science">
+      <div class="paper-meta"><strong>2024</strong><span>Journal</span></div>
+      <div><h2><a href="https://doi.org/10.30574/wjarr.2024.21.3.0716">Deep learning-based retinal abnormality detection from OCT images with limited data</a></h2>
+      <p class="authors">Mohammad Talebzadeh, Abolfazl Sodagartojgi, <strong>Zahra Moslemi</strong>, Sara Sedighi, Behzad Kazemi, Faezeh Akbari</p>
+      <p class="venue">World Journal of Advanced Research and Reviews · 21(3):690–698</p>
+      <p class="summary">Metric learning for retinal disease classification when labeled medical imaging data are limited.</p>
+      <div class="paper-links"><a href="https://doi.org/10.30574/wjarr.2024.21.3.0716">Read paper <span aria-hidden="true">↗</span></a>
+      <a href="https://wjarr.com/sites/default/files/fulltext_pdf/WJARR-2024-0716.pdf">PDF <span aria-hidden="true">↗</span></a></div></div></article></section></main>
+<footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Zahra Moslemi · Updated October 2026</span><div class="social-links"><a href="mailto:zmoslemi@uci.edu">Email</a><a href="https://scholar.google.com/citations?user=jbJTkg4AAAAJ&hl=en">Scholar</a><a href="https://github.com/zahraMoslemi">GitHub</a><a href="https://www.linkedin.com/in/zahra-moslemi/">LinkedIn</a></div></div></footer></body></html>

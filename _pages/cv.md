@@ -1,64 +1,22 @@
 ---
-layout: archive
-title: "CV"
+layout: null
+title: "Curriculum Vitae"
 permalink: /cv/
-author_profile: true
-redirect_from:
-  - /resume
 ---
-
-{% include base_path %}
-
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
-
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
-
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
-
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
-
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Curriculum Vitae | Zahra Moslemi</title><meta name="description" content="Zahra Moslemi, Statistics PhD candidate at UC Irvine. Research in Bayesian machine learning, uncertainty quantification, biomedical AI, and reliable LLM agents.">
+<link rel="canonical" href="https://zahramoslemi.github.io/cv/"><meta name="theme-color" content="#172f34">
+<meta property="og:type" content="website"><meta property="og:title" content="Curriculum Vitae | Zahra Moslemi">
+<meta property="og:description" content="Zahra Moslemi, Statistics PhD candidate at UC Irvine. Research in Bayesian machine learning, uncertainty quantification, biomedical AI, and reliable LLM agents."><meta property="og:url" content="https://zahramoslemi.github.io/cv/"><meta property="og:image" content="https://zahramoslemi.github.io/images/profile.jpg">
+<meta name="twitter:card" content="summary"><link rel="icon" href="/images/zm-monogram.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/css/portfolio.css"><script src="/assets/js/portfolio.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Zahra Moslemi", "url": "https://zahramoslemi.github.io", "image": "https://zahramoslemi.github.io/images/profile.jpg", "jobTitle": "PhD candidate in Statistics", "affiliation": {"@type": "CollegeOrUniversity", "name": "University of California, Irvine"}, "email": "mailto:zmoslemi@uci.edu", "sameAs": ["https://scholar.google.com/citations?user=jbJTkg4AAAAJ&hl=en", "https://github.com/zahraMoslemi", "https://www.linkedin.com/in/zahra-moslemi/"]}</script></head>
+<body><a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/" aria-label="Zahra Moslemi, home"><span aria-hidden="true">Z</span>Zahra Moslemi</a>
+<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
+<nav class="nav" id="main-navigation" aria-label="Main navigation"><a href="/#research">Research</a><a href="/publications/">Publications</a><a href="/#experience">Experience</a><a class="nav-cv" href="/cv/">CV <span aria-hidden="true">↗</span></a></nav></div></header>
+<main id="main" class="wrap"><section class="page-intro"><p class="eyebrow">Curriculum vitae</p><h1>Research &amp; experience.</h1><p>My CV brings together my research, publications, education, and industry experience. Updated October 2026, including the SCOPE preprint.</p></section>
+<section class="cv-summary"><a class="button primary" href="/files/Zahra_Moslemi_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
+<dl><dt>Education</dt><dd>PhD candidate in Statistics, UC Irvine. Expected January 2027. MS in Statistics, UC Irvine; BS in Industrial Engineering, Sharif University of Technology.</dd><dt>Research</dt><dd>Bayesian machine learning, uncertainty quantification, biomedical AI, graph representation learning, and LLM agents and evaluation.</dd><dt>Industry</dt><dd>Research Scientist internships at ClearNote Health (2024 and 2026) and Accenture’s Center for Advanced AI (2025).</dd><dt>Opportunities</dt><dd>Research scientist, applied scientist, research engineering, and postdoctoral positions. Open to U.S. locations.</dd><dt>Contact</dt><dd><a href="mailto:zmoslemi@uci.edu">zmoslemi@uci.edu</a></dd></dl></section></main>
+<footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Zahra Moslemi · Updated October 2026</span><div class="social-links"><a href="mailto:zmoslemi@uci.edu">Email</a><a href="https://scholar.google.com/citations?user=jbJTkg4AAAAJ&hl=en">Scholar</a><a href="https://github.com/zahraMoslemi">GitHub</a><a href="https://www.linkedin.com/in/zahra-moslemi/">LinkedIn</a></div></div></footer></body></html>

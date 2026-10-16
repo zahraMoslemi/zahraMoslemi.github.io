@@ -12,11 +12,11 @@ site_theme               : "default" # Currently available options are "default"
 title                    : "Zahra Moslemi"
 title_separator          : "-"
 name                     : &name "Zahra Moslemi"
-description              : &description "Your Name's academic portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
+description              : &description "Zahra Moslemi — Bayesian machine learning, biomedical AI, and reliable agentic systems."   # Update this with a general description of your site, this is the default if not overridden by a page
 url                      : https://zahramoslemi.github.io # The base hostname & protocol for your site e.g. "https://[your GitHub username].github.io",
                                                            # or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "academicpages/academicpages.github.io"
+repository               : "zahraMoslemi/zahraMoslemi.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
@@ -26,7 +26,7 @@ author:
   avatar           : "profile.jpg"
   name             : "Zahra Moslemi"
   pronouns         : # example: "she/her"  
-  bio              : "PhD Student in Statistics"
+  bio              : "Statistics PhD candidate · Machine learning"
   location         : "Irvine, CA"
   employer         : "University of California, Irvine"
   uri              : # URL
@@ -163,6 +163,27 @@ include:
   - _pages
   - files
 exclude:
+  - _posts
+  - _talks
+  - _teaching
+  - _portfolio
+  - _publications
+  - _pages/archive-layout-with-content.md
+  - _pages/category-archive.html
+  - _pages/collection-archive.html
+  - _pages/cv-json.md
+  - _pages/markdown.md
+  - _pages/non-menu-page.md
+  - _pages/page-archive.html
+  - _pages/portfolio.html
+  - _pages/tag-archive.html
+  - _pages/talkmap.html
+  - _pages/talks.html
+  - _pages/teaching.html
+  - _pages/year-archive.html
+  - _portfolio_preview
+  - scripts
+  - PORTFOLIO_MAINTENANCE.md
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache

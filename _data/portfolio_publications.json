@@ -1,0 +1,98 @@
+[
+  {
+    "id": "scope",
+    "year": "2026",
+    "type": "Preprint",
+    "topics": "uncertainty",
+    "title": "SCOPE Before You Sample: Conformal Scores Guide Posterior Exploration for Fast and Calibrated Bayesian Predictive Inference",
+    "authors": "Zahra Moslemi, Ziyi Liang, Babak Shahbaba",
+    "venue": "arXiv preprint · Under review at AISTATS 2027",
+    "summary": "Conformal scores identify the posterior directions that matter for predictive regions, combining targeted MCMC with a variational approximation and calibrated coverage.",
+    "url": "https://arxiv.org/abs/2610.17146",
+    "pdf": "https://arxiv.org/pdf/2610.17146"
+  },
+  {
+    "id": "mgmt",
+    "year": "2026",
+    "type": "Preprint",
+    "topics": "science",
+    "title": "Heterogeneous Graph Alignment for Joint Reasoning and Interpretability",
+    "authors": "Zahra Moslemi, Ziyi Liang, Norbert Fortin, Babak Shahbaba",
+    "venue": "arXiv preprint · Multi-Graph Meta-Transformer (MGMT)",
+    "summary": "A shared meta-graph aligns attention-selected supernodes across heterogeneous graphs, supporting joint prediction and interpretable scientific analysis. Related MGMT work was presented at the NeurIPS 2025 NPGML Workshop (Spotlight).",
+    "url": "https://arxiv.org/abs/2601.22593",
+    "pdf": "https://arxiv.org/pdf/2601.22593"
+  },
+  {
+    "id": "polaris",
+    "year": "2026",
+    "type": "Workshop",
+    "topics": "agents",
+    "title": "POLARIS: Typed Planning and Governed Execution for Agentic AI in Back-Office Automation",
+    "authors": "Zahra Moslemi, Keerthi Koneru, Yen-Ting Lee, Sheethal Kumar, Ramesh Radhakrishnan",
+    "venue": "AAAI 2026 · Workshop on Agentic AI Benchmarks and Applications for Enterprise Tasks",
+    "summary": "Typed plan synthesis and validated execution bring policy checks, bounded repair, and traceable decision-making to enterprise agent workflows.",
+    "url": "https://arxiv.org/abs/2601.11816",
+    "pdf": "https://arxiv.org/pdf/2601.11816"
+  },
+  {
+    "id": "aema",
+    "year": "2026",
+    "type": "Workshop",
+    "topics": "agents",
+    "title": "AEMA: Verifiable Evaluation Framework for Trustworthy and Controlled Agentic LLM Systems",
+    "authors": "Yen-Ting Lee, Keerthi Koneru, Zahra Moslemi, Sheethal Kumar, Ramesh Radhakrishnan",
+    "venue": "AAAI 2026 · Workshop on Trust and Control in Agentic AI",
+    "summary": "An auditable framework for planning, running, and aggregating evaluations of multi-agent workflows, with human oversight and reproducible evaluation records.",
+    "url": "https://arxiv.org/abs/2601.11903",
+    "pdf": "https://arxiv.org/pdf/2601.11903"
+  },
+  {
+    "id": "crossgraph",
+    "year": "2025",
+    "type": "Workshop",
+    "topics": "science",
+    "title": "Multi-Graph Meta-Transformer: An Interpretable Framework for Cross-Graph Functional Alignment in Neural Decoding",
+    "authors": "Zahra Moslemi, Ziyi Liang, Norbert J. Fortin, Babak Shahbaba",
+    "venue": "NeurIPS 2025 · AI4Science Workshop · Spotlight · Best Poster Runner-up",
+    "summary": "Functional alignment across heterogeneous neural recordings connects task-relevant structures across subjects while preserving interpretable graph representations.",
+    "url": "https://openreview.net/forum?id=CBcubwXMhA",
+    "pdf": "https://openreview.net/pdf/b80baee1e96105401fdc5397af5723ebdb7054a1.pdf"
+  },
+  {
+    "id": "fbnn",
+    "year": "2024",
+    "type": "Journal",
+    "topics": "uncertainty",
+    "title": "Scaling Up Bayesian Neural Networks with Neural Networks",
+    "authors": "Zahra Moslemi, Yang Meng, Shiwei Lan, Babak Shahbaba",
+    "venue": "Transactions on Machine Learning Research (TMLR)",
+    "summary": "A calibration–emulation–sampling strategy accelerates Bayesian neural network inference while retaining predictive accuracy and uncertainty estimation.",
+    "url": "https://openreview.net/forum?id=cD209Ug0X7",
+    "pdf": "https://arxiv.org/pdf/2312.11799"
+  },
+  {
+    "id": "strong",
+    "year": "2024",
+    "type": "Journal",
+    "topics": "science",
+    "title": "Genetic Variation and Stroke Recovery: The STRONG Study",
+    "authors": "Steven C. Cramer, Livia Parodi, Zahra Moslemi, Robynne G. Braun, Chad M. Aldridge, Babak Shahbaba, Jonathan Rosand, E. Alison Holman; STRONG Study Investigators",
+    "venue": "Stroke · 55(8):2094–2102",
+    "summary": "A prospective study across 28 U.S. stroke centers investigating associations between genetic variation and recovery outcomes.",
+    "url": "https://doi.org/10.1161/STROKEAHA.124.047643",
+    "pdf": ""
+  },
+  {
+    "id": "oct",
+    "year": "2024",
+    "type": "Journal",
+    "topics": "science",
+    "title": "Deep learning-based retinal abnormality detection from OCT images with limited data",
+    "authors": "Mohammad Talebzadeh, Abolfazl Sodagartojgi, Zahra Moslemi, Sara Sedighi, Behzad Kazemi, Faezeh Akbari",
+    "venue": "World Journal of Advanced Research and Reviews · 21(3):690–698",
+    "summary": "Metric learning for retinal disease classification when labeled medical imaging data are limited.",
+    "url": "https://doi.org/10.30574/wjarr.2024.21.3.0716",
+    "pdf": "https://wjarr.com/sites/default/files/fulltext_pdf/WJARR-2024-0716.pdf"
+  }
+]
