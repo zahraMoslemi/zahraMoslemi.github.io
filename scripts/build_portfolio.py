@@ -114,8 +114,7 @@ home='''<section class="hero" aria-labelledby="intro-title"><div>
 <div class="current-work"><strong>Current collaboration with Google Research.</strong> I work on time-series foundation models and uncertainty-aware model selection for sparse longitudinal data, including evaluation under missingness and distribution shift.</div></section>
 
 <section class="section" id="selected-work"><div class="section-heading"><div><p class="eyebrow">Selected work</p><h2>Research in focus.</h2></div><a class="text-link" href="/publications/">All publications &amp; preprints ↗</a></div>
-<article class="feature"><div><p class="eyebrow">New preprint · October 2026</p><h3>SCOPE Before You Sample</h3><p class="subtitle">Conformal scores guide posterior exploration for fast, calibrated Bayesian prediction.</p><p>We use the geometry of prediction scores to focus posterior computation on the directions that matter for predictive coverage.</p><p><span class="label">Under review at AISTATS 2027</span></p><a class="text-link" href="https://arxiv.org/abs/2610.17146">Read the preprint ↗</a></div><div class="feature-side"><div class="metric">12–15×</div><p>faster than full HMC on the paper’s real-data benchmarks.</p><p class="note">Reported in SCOPE, arXiv:2610.17146.</p></div></article>
-<div class="paper-list">'''+''.join(paper_html(next(p for p in papers if p['id']==i),True) for i in ['fbnn','crossgraph','polaris'])+'''</div></section>
+<div class="paper-list">'''+''.join(paper_html(next(p for p in papers if p['id']==i),True) for i in ['scope','fbnn','crossgraph','polaris'])+'''</div></section>
 
 <section class="section" id="experience"><div class="section-heading"><div><p class="eyebrow">Industry experience</p><h2>Research that meets real data.</h2></div></div>
 <div class="experience-list">
