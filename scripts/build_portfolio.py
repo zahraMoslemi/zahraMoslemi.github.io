@@ -65,80 +65,112 @@ dict(id='oct', year='2024', type='Journal', topics='science',
  url='https://doi.org/10.30574/wjarr.2024.21.3.0716', pdf='https://wjarr.com/sites/default/files/fulltext_pdf/WJARR-2024-0716.pdf')
 ]
 
+THEMES = [
+    dict(id='uncertainty', title='Bayesian ML & uncertainty',
+         question='How can models express what they do not know?',
+         description='I develop efficient Bayesian inference and conformal methods for predictions whose uncertainty is useful and well calibrated.',
+         ids=['scope', 'fbnn']),
+    dict(id='science', title='Biomedical AI & AI for science',
+         question='How can we learn from complex biological data?',
+         description='I study graph representations and interpretable learning across heterogeneous data, with applications in neural decoding and biomedical prediction.',
+         ids=['mgmt', 'crossgraph']),
+    dict(id='agents', title='LLM agents & evaluation',
+         question='How can we make agent workflows more reliable?',
+         description='I build structured planning and evaluation methods for agentic systems, bringing together verifiable execution, reproducible tests, and human oversight.',
+         ids=['polaris', 'aema'])
+]
+
+
 def paper_html(p, compact=False):
     level = 'h3' if compact else 'h2'
     authors = escape(p['authors']).replace('Zahra Moslemi', '<strong>Zahra Moslemi</strong>')
     return f'''<article class="paper" id="{p['id']}" data-topics="{p['topics']}">
-      <div class="paper-meta"><strong>{p['year']}</strong><span>{p['type']}</span></div>
-      <div><{level}><a href="{p['url']}">{escape(p['title'])}</a></{level}>
-      {'' if compact else f'<p class="authors">{authors}</p>'}
+      <a class="paper-visual" href="{p['url']}" tabindex="-1" aria-hidden="true"><img src="/images/research/{p['id']}.svg" width="640" height="360" alt="" loading="lazy"></a>
+      <div class="paper-content"><p class="paper-meta">{p['year']} <span aria-hidden="true">/</span> {p['type']}</p>
+      <{level}><a href="{p['url']}">{escape(p['title'])}</a></{level}>
+      <p class="authors">{authors}</p>
       <p class="venue">{escape(p['venue'])}</p>
       <p class="summary">{escape(p['summary'])}</p>
-      <div class="paper-links"><a href="{p['url']}">Read paper <span aria-hidden="true">↗</span></a>
+      <div class="paper-links"><a href="{p['url']}">Paper <span aria-hidden="true">↗</span></a>
       {f'<a href="{p["pdf"]}">PDF <span aria-hidden="true">↗</span></a>' if p['pdf'] else ''}</div></div></article>'''
+
 
 def shell(title, path, body):
     desc='Zahra Moslemi, Statistics PhD candidate at UC Irvine. Research in Bayesian machine learning, uncertainty quantification, biomedical AI, and reliable LLM agents.'
-    nav=''.join(f'<a href="{href}"'+(' aria-current="page"' if path==href else '')+f'>{label}</a>' for label,href in [('Research','/#research'),('Publications','/publications/'),('Experience','/#experience')])
+    nav=''.join(f'<a href="{href}"'+(' aria-current="page"' if path==href else '')+f'>{label}</a>' for label,href in [('About','/'),('Research','/#research'),('Publications','/publications/'),('Experience','/#experience'),('CV','/cv/')])
     structured={'@context':'https://schema.org','@type':'Person','name':'Zahra Moslemi','url':SITE,'image':SITE+'/images/profile.jpg','jobTitle':'PhD candidate in Statistics','affiliation':{'@type':'CollegeOrUniversity','name':'University of California, Irvine'},'email':'mailto:zmoslemi@uci.edu','sameAs':[SCHOLAR,'https://github.com/zahraMoslemi','https://www.linkedin.com/in/zahra-moslemi/']}
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{escape(title)} | Zahra Moslemi</title><meta name="description" content="{desc}">
-<link rel="canonical" href="{SITE}{path}"><meta name="theme-color" content="#172f34">
+<link rel="canonical" href="{SITE}{path}"><meta name="theme-color" content="#7b3045">
 <meta property="og:type" content="website"><meta property="og:title" content="{escape(title)} | Zahra Moslemi">
 <meta property="og:description" content="{desc}"><meta property="og:url" content="{SITE}{path}"><meta property="og:image" content="{SITE}/images/profile.jpg">
 <meta name="twitter:card" content="summary"><link rel="icon" href="/images/zm-monogram.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/css/portfolio.css"><script src="/assets/js/portfolio.js" defer></script>
 <script type="application/ld+json">{json.dumps(structured)}</script></head>
 <body><a class="skip" href="#main">Skip to content</a>
-<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/" aria-label="Zahra Moslemi, home"><span aria-hidden="true">Z</span>Zahra Moslemi</a>
+<header class="site-header"><div class="wrap header-inner"><a class="brand" href="/" aria-label="Zahra Moslemi, home">Zahra <span>@ UCI</span></a>
 <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation">Menu</button>
-<nav class="nav" id="main-navigation" aria-label="Main navigation">{nav}<a class="nav-cv" href="/cv/">CV <span aria-hidden="true">↗</span></a></nav></div></header>
-<main id="main" class="wrap">{body}</main>
-<footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Zahra Moslemi · Updated October 2026</span><div class="social-links"><a href="mailto:zmoslemi@uci.edu">Email</a><a href="{SCHOLAR}">Scholar</a><a href="https://github.com/zahraMoslemi">GitHub</a><a href="https://www.linkedin.com/in/zahra-moslemi/">LinkedIn</a></div></div></footer></body></html>'''
+<nav class="nav" id="main-navigation" aria-label="Main navigation">{nav}</nav></div></header>
+<main id="main"{'' if path=='/' else ' class="wrap"'}>{body}</main>
+<footer class="site-footer"><div class="wrap footer-inner"><span>© 2026 Zahra Moslemi <span class="footer-dot">·</span> Updated October 2026</span><div class="social-links"><a href="mailto:zmoslemi@uci.edu">Email</a><a href="{SCHOLAR}">Scholar</a><a href="https://github.com/zahraMoslemi">GitHub</a><a href="https://www.linkedin.com/in/zahra-moslemi/">LinkedIn</a></div></div></footer></body></html>'''
 
-home='''<section class="hero" aria-labelledby="intro-title"><div>
-<p class="eyebrow">Statistics PhD candidate · UC Irvine</p>
-<h1 id="intro-title">Zahra Moslemi</h1>
-<p class="lead">Reliable machine learning.<br>Grounded in statistical thinking.</p>
-<p class="bio">I develop methods for learning and decision-making under uncertainty, with applications in biomedical AI and agentic systems. At UC Irvine, I work with <a href="https://www.ics.uci.edu/~babaks/">Prof. Babak Shahbaba</a> on Bayesian inference, graph representation learning, and model reliability.</p>
-<div class="actions"><a class="button primary" href="/publications/">Explore my research <span aria-hidden="true">↗</span></a><a class="button" href="/files/Zahra_Moslemi_CV.pdf">Download CV <span aria-hidden="true">↓</span></a></div></div>
-<figure class="portrait"><img src="/images/profile.jpg" width="288" height="335" alt="Zahra Moslemi" fetchpriority="high"><figcaption>UNIVERSITY OF CALIFORNIA, IRVINE<br>Department of Statistics</figcaption></figure></section>
-<div class="availability"><span><i class="status-dot" aria-hidden="true"></i><strong>Open to research and applied science opportunities</strong></span><span>Expected PhD: January 2027 · Open to U.S. locations</span></div>
 
-<section class="section" id="research"><div class="section-heading"><div><p class="eyebrow">Research directions</p><h2>From uncertainty to useful AI.</h2></div></div>
-<div class="research-grid">
-<article class="research-area"><span class="research-number">01</span><h3>Bayesian ML &amp; uncertainty</h3><p>Efficient posterior inference and calibrated predictions: understanding what a model knows, where it is uncertain, and how to use that uncertainty.</p><p class="tag-line">Bayesian neural networks · Conformal prediction · MCMC</p><a class="text-link" href="/publications/?topic=uncertainty">Related papers ↗</a></article>
-<article class="research-area"><span class="research-number">02</span><h3>AI for health &amp; science</h3><p>Learning from sparse, heterogeneous biological data through graph models, transformers, and generative methods, with an emphasis on interpretable predictions.</p><p class="tag-line">Biomedical AI · Graph learning · Representation learning</p><a class="text-link" href="/publications/?topic=science">Related papers ↗</a></article>
-<article class="research-area"><span class="research-number">03</span><h3>LLM agents &amp; evaluation</h3><p>Planning and evaluation for agentic systems that operate in real workflows, with reproducible tests, verifiable execution, and human oversight.</p><p class="tag-line">Multi-agent systems · DSPy · Reliable evaluation</p><a class="text-link" href="/publications/?topic=agents">Related papers ↗</a></article></div>
-<div class="current-work"><strong>Current collaboration with Google Research.</strong> I work on time-series foundation models and uncertainty-aware model selection for sparse longitudinal data, including evaluation under missingness and distribution shift.</div></section>
+def theme_card(theme, number):
+    return f'''<a class="theme-card {theme['id']}" href="#theme-{theme['id']}">
+      <img src="/images/research/{theme['id']}.svg" alt="" width="640" height="360">
+      <div class="theme-caption"><span class="theme-index">0{number}</span><h3>{escape(theme['title'])}</h3><span class="theme-arrow" aria-hidden="true">↓</span></div>
+      <p>{escape(theme['question'])}</p></a>'''
 
-<section class="section" id="selected-work"><div class="section-heading"><div><p class="eyebrow">Selected work</p><h2>Research in focus.</h2></div><a class="text-link" href="/publications/">All publications &amp; preprints ↗</a></div>
-<div class="paper-list">'''+''.join(paper_html(next(p for p in papers if p['id']==i),True) for i in ['scope','fbnn','crossgraph','polaris'])+'''</div></section>
 
-<section class="section" id="experience"><div class="section-heading"><div><p class="eyebrow">Industry experience</p><h2>Research that meets real data.</h2></div></div>
-<div class="experience-list">
+def theme_section(theme, number):
+    selected = [next(p for p in papers if p['id']==paper_id) for paper_id in theme['ids']]
+    return f'''<section class="research-theme {theme['id']}" id="theme-{theme['id']}" aria-labelledby="heading-{theme['id']}">
+      <div class="theme-heading"><span class="section-number">0{number}</span><div><h2 id="heading-{theme['id']}">{escape(theme['title'])}</h2><p>{escape(theme['description'])}</p></div></div>
+      <div class="paper-list">{''.join(paper_html(p,True) for p in selected)}</div>
+      <a class="text-link theme-more" href="/publications/?topic={theme['id']}">All papers in this area <span aria-hidden="true">↗</span></a></section>'''
+
+
+home=f'''<section class="profile-band" aria-labelledby="intro-title"><div class="wrap profile">
+<img class="portrait" src="/images/profile.jpg" width="288" height="335" alt="Zahra Moslemi" fetchpriority="high">
+<div class="profile-name"><p class="hello">Hello, I’m</p><h1 id="intro-title">Zahra Moslemi</h1><a class="profile-email" href="mailto:zmoslemi@uci.edu">zmoslemi@uci.edu</a><div class="profile-links"><a href="{SCHOLAR}">Scholar</a><a href="https://github.com/zahraMoslemi">GitHub</a><a href="https://www.linkedin.com/in/zahra-moslemi/">LinkedIn</a><a href="{CV}">CV <span aria-hidden="true">↓</span></a></div></div>
+<div class="affiliation"><p>PhD candidate in Statistics</p><p>University of California, Irvine</p><p class="graduation">Expected January 2027</p></div></div></section>
+<div class="wrap home-content"><section class="introduction" aria-label="About me"><p>I work at the intersection of <strong>statistical machine learning, biomedical AI, and reliable agentic systems</strong>. At UC Irvine, I am advised by <a href="https://www.ics.uci.edu/~babaks/">Prof. Babak Shahbaba</a>. My research brings Bayesian inference and uncertainty quantification to problems where data are limited, heterogeneous, or shifting.</p>
+<div class="research-statement">I study how to make machine learning <em>more reliable</em>, from scientific data to agent workflows.</div>
+<p class="opportunity-note"><span class="note-label">Looking ahead</span> I’m exploring research, applied science, and postdoctoral opportunities for 2027. <a href="mailto:zmoslemi@uci.edu">Get in touch <span aria-hidden="true">↗</span></a></p></section>
+
+<section class="research-overview" id="research" aria-labelledby="research-title"><div class="section-heading"><h2 id="research-title">Research directions</h2><span>Explore a theme to see related work</span></div><div class="theme-grid">{''.join(theme_card(theme,i) for i,theme in enumerate(THEMES,1))}</div></section>
+
+<p class="collaboration-note"><strong>Current collaboration.</strong> With Google Research, I study time-series foundation models and uncertainty-aware model selection for sparse longitudinal data, including evaluation under missingness and distribution shift.</p>
+<div class="highlights-heading"><h2>Research highlights</h2><a class="text-link" href="/publications/">All publications &amp; preprints <span aria-hidden="true">↗</span></a></div>
+{''.join(theme_section(theme,i) for i,theme in enumerate(THEMES,1))}
+
+<section class="section" id="experience"><div class="section-heading"><h2>Industry experience</h2><span>Research Scientist internships</span></div>
+'''
+
+home+='''<div class="experience-list">
 <article class="experience-row"><div class="experience-date">Summer 2026 · San Mateo</div><div><h3>ClearNote Health</h3><p class="role">Research Scientist Intern</p><p>Developed a biology-informed vision transformer for pancreatic-cancer cfDNA fragmentomics using joint-embedding prediction. Worked on conformal and Bayesian methods for uncertainty-aware biomedical prediction.</p></div></article>
 <article class="experience-row"><div class="experience-date">Summer 2025 · Boston</div><div><h3>Accenture · Center for Advanced AI</h3><p class="role">Research Scientist Intern · T-Mobile collaboration</p><p>Built multi-agent planning and evaluation workflows with AutoGen and DSPy, and integrated human review through Azure AI Foundry. This work contributed to POLARIS and AEMA, presented at AAAI 2026 workshops.</p></div></article>
 <article class="experience-row"><div class="experience-date">Summer 2024 · San Mateo</div><div><h3>ClearNote Health</h3><p class="role">Research Scientist Intern</p><p>Combined diffusion-based synthetic data with Perceiver IO for biomedical learning under class imbalance and data scarcity. Developed reproducible experiments and evaluated calibration and robustness under distribution shift.</p></div></article></div>
 <div class="skills" aria-label="Selected technical skills"><span>Python</span><span>PyTorch</span><span>SQL</span><span>Hugging Face</span><span>DSPy</span><span>AutoGen</span><span>Azure AI Foundry</span><span>Nextflow</span></div></section>
 
-<section class="section two-col" id="background"><div><div class="section-heading"><div><p class="eyebrow">Background</p><h2>Education.</h2></div></div>
+<section class="section two-col" id="background"><div><div class="section-heading"><div><h2>Education</h2></div></div>
 <div class="education-item"><h3>PhD in Statistics</h3><p>University of California, Irvine</p><p class="dates">2023–present · Expected January 2027</p><p>Research focus: machine learning and Bayesian inference</p></div>
 <div class="education-item"><h3>MS in Statistics</h3><p>University of California, Irvine</p><p class="dates">2021–2023</p></div>
 <div class="education-item"><h3>BS in Industrial Engineering</h3><p>Sharif University of Technology</p><p class="dates">2016–2020 · Ranked 4th of 200</p></div></div>
-<div><div class="section-heading"><div><p class="eyebrow">Selected recognition</p><h2>Honors &amp; service.</h2></div></div><ul class="recognition-list">
+<div><div class="section-heading"><div><h2>Honors &amp; service</h2></div></div><ul class="recognition-list">
 <li>Best Poster Runner-up<span>NeurIPS 2025 · AI4Science Workshop</span></li>
 <li>Best Poster Award<span>NeurIPS 2025 · New Perspectives in Graph Machine Learning Workshop</span></li>
 <li>Gold Reviewer<span>ICML 2026</span></li>
 <li>Henry Samueli Endowed Fellowship<span>University of California, Irvine · 2024</span></li>
 </ul></div></section>
-<section class="contact-section" id="contact"><div><p class="eyebrow">Let’s connect</p><h2>Interested in working together?</h2><p>I’m exploring research scientist, applied scientist, research engineering, and postdoctoral opportunities in machine learning, biomedical AI, and AI for science.</p></div><a class="button" href="mailto:zmoslemi@uci.edu">zmoslemi@uci.edu <span aria-hidden="true">↗</span></a></section>'''
+'''
+home+='''<section class="contact-section" id="contact"><div><h2>Let’s connect</h2><p>I’m interested in research scientist, applied scientist, research engineering, and postdoctoral opportunities in machine learning, biomedical AI, and AI for science.</p></div><a class="button" href="mailto:zmoslemi@uci.edu">Email me <span aria-hidden="true">↗</span></a></section></div>'''
 
-pubbody='''<section class="page-intro"><p class="eyebrow">Research output</p><h1>Publications &amp; preprints.</h1><p>My work spans statistical machine learning, biomedical applications, and reliable agentic systems. Publication and review status are listed with each paper.</p><a class="text-link" href="'''+SCHOLAR+'''">Google Scholar ↗</a></section>
+pubbody='''<section class="page-intro"><p class="eyebrow">Research</p><h1>Publications &amp; preprints</h1><p>Statistical machine learning, biomedical AI, and reliable agentic systems. Publication and review status are listed with each paper.</p><a class="text-link" href="'''+SCHOLAR+'''">Google Scholar <span aria-hidden="true">↗</span></a></section>
 <section class="publications-page" aria-label="Research papers"><div class="filters" aria-label="Filter papers by topic"><button data-filter="all" aria-pressed="true">All papers</button><button data-filter="uncertainty" aria-pressed="false">Bayesian ML &amp; uncertainty</button><button data-filter="science" aria-pressed="false">Health &amp; science</button><button data-filter="agents" aria-pressed="false">LLM agents</button></div><p class="result-count" id="result-count" role="status" aria-live="polite">8 papers</p>'''+''.join(paper_html(p) for p in papers)+'''</section>'''
 
-cvbody='''<section class="page-intro"><p class="eyebrow">Curriculum vitae</p><h1>Research &amp; experience.</h1><p>My CV brings together my research, publications, education, and industry experience. Updated October 2026, including the SCOPE preprint.</p></section>
+cvbody='''<section class="page-intro"><p class="eyebrow">Curriculum vitae</p><h1>Research &amp; experience</h1><p>My research, publications, education, and industry experience. Updated October 2026.</p></section>
 <section class="cv-summary"><a class="button primary" href="/files/Zahra_Moslemi_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
 <dl><dt>Education</dt><dd>PhD candidate in Statistics, UC Irvine. Expected January 2027. MS in Statistics, UC Irvine; BS in Industrial Engineering, Sharif University of Technology.</dd><dt>Research</dt><dd>Bayesian machine learning, uncertainty quantification, biomedical AI, graph representation learning, and LLM agents and evaluation.</dd><dt>Industry</dt><dd>Research Scientist internships at ClearNote Health (2024 and 2026) and Accenture’s Center for Advanced AI (2025).</dd><dt>Opportunities</dt><dd>Research scientist, applied scientist, research engineering, and postdoctoral positions. Open to U.S. locations.</dd><dt>Contact</dt><dd><a href="mailto:zmoslemi@uci.edu">zmoslemi@uci.edu</a></dd></dl></section>'''
 
@@ -150,7 +182,9 @@ for filename,path,title,body in pages:
     extra='redirect_from:\n  - /about/\n  - /about.html\n' if path=='/' else ''
     (ROOT/filename).write_text(f'---\nlayout: null\ntitle: "{title}"\npermalink: {path}\n{extra}---\n'+html)
     target=PREVIEW/path.strip('/')/'index.html';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(html)
-for filename in ['assets/css/portfolio.css','assets/js/portfolio.js','images/profile.jpg','images/zm-monogram.svg','files/Zahra_Moslemi_CV.pdf']:
+assets=['assets/css/portfolio.css','assets/js/portfolio.js','images/profile.jpg','images/zm-monogram.svg','files/Zahra_Moslemi_CV.pdf']
+assets += [str(p.relative_to(ROOT)) for p in sorted((ROOT/'images/research').glob('*.svg'))]
+for filename in assets:
     source=ROOT/filename
     if source.exists():
         target=PREVIEW/filename;target.parent.mkdir(parents=True,exist_ok=True)
