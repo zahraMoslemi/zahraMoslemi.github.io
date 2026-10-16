@@ -65,6 +65,125 @@ dict(id='oct', year='2024', type='Journal', topics='science',
  url='https://doi.org/10.30574/wjarr.2024.21.3.0716', pdf='https://wjarr.com/sites/default/files/fulltext_pdf/WJARR-2024-0716.pdf')
 ]
 
+# Figures from the papers, prepared from the arXiv/OpenReview sources and the
+# TMLR submission source (provenance in PORTFOLIO_MAINTENANCE.md). The first
+# figure of each paper is its card image; every figure opens in the lightbox.
+# Card images are 16:9 crops named <file>-card.<ext>; full figures keep their aspect.
+FIGURES = {
+ 'scope': [
+  dict(file='scope-regions', ext='png', w=1650, h=579,
+       alt='SCOPE and CQR prediction regions on a bimodal simulation',
+       lead='SCOPE vs. CQR prediction regions on a bimodal simulation',
+       caption='Density-level geometry in Simulation 2. (a, b) SCOPE and conformalized quantile regression (CQR) prediction regions as functions of x₁, with dots marking the population oracle boundaries. (c) At an input where the target density is bimodal, SCOPE follows both modes while CQR spans the low-density gap between them.'),
+  dict(file='scope-headline', ext='png', w=1800, h=512,
+       alt='Three-panel summary of SCOPE results across eight benchmarks',
+       lead='Main empirical summary across eight benchmarks',
+       caption='Main empirical summary. (a) Test negative log-likelihood relative to the HMC baseline across eight benchmarks, with median UCI runtimes as labels. (b) Predictive effective sample size per second relative to HMC on six UCI datasets. (c) Independently calibrated prediction-region size relative to HMC with conformal calibration; SCOPE/Split carries the standard split-conformal marginal guarantee. Points and bars are medians; whiskers are ranges.'),
+  dict(file='scope-overview', ext='png', w=1800, h=729,
+       alt='Flow diagram of the SCOPE procedure',
+       lead='SCOPE pipeline overview',
+       caption='SCOPE overview. For each candidate reference point, guide observations determine an active parameter subspace; slice MCMC and a projected variational completion produce a candidate predictive distribution. The candidate with the lower negative log-likelihood on the guide set is selected, and a quantile of the guide scores sets its prediction region. SCOPE/Split calibrates the final threshold on an independent set.'),
+ ],
+ 'fbnn': [
+  dict(file='fbnn-mixture', ext='png', w=1478, h=489,
+       alt='Samples from a 25-component Gaussian mixture under SGHMC and pCN',
+       lead='Sampling a 25-Gaussian mixture: SGHMC vs. pCN',
+       caption='Sampling from a mixture of 25 Gaussians (left, 200k samples). Stochastic-gradient HMC (middle) explores the space broadly, while the preconditioned Crank–Nicolson sampler (right) concentrates on the high-density regions and captures the modes precisely.'),
+  dict(file='fbnn-intervals', ext='png', w=576, h=436,
+       alt='Predictive intervals from BNN and FBNN against the true output',
+       lead='Predictive intervals along the first principal component',
+       caption='Predictive uncertainty on simulated regression data, plotted along the first principal component. The 95% credible bands and mean predictions of a standard BNN and of FBNN are compared with the 95% interval and mean of the true output.'),
+  dict(file='fbnn-speedup', ext='png', w=1800, h=897,
+       alt='Bar charts of sampling speedup for BNN methods on eight datasets',
+       lead='Sampling speedup across eight datasets',
+       caption='Sampling speedup of Bayesian neural network methods across the tested datasets, ordered by efficiency within each dataset. FBNN with the SGHMC–pCN combination achieves the highest speedup on every dataset except Wine Quality, where it ranks second.'),
+ ],
+ 'mgmt': [
+  dict(file='mgmt-architecture', ext='png', w=2000, h=1036,
+       alt='MGMT architecture diagram: encode sources, select nodes, wire sources, predict',
+       lead='MGMT architecture: encode, select, wire, predict',
+       caption='MGMT architecture. Source-specific graph-attention encoders combine four depths and retain selected nodes together with their induced edges. A parameter-free wiring step compares nodes through reference signatures and links similar nodes across sources into one meta-graph. Two meta-graph attention layers with mean pooling produce a single collection-level prediction. Brackets mark the two fitted stages and the construction step between them.'),
+  dict(file='mgmt-layers', ext='png', w=1753, h=472,
+       alt='Four hippocampal connectivity graphs with per-layer attention and confidence scores',
+       lead='Layer-wise attention on one subject’s LFP graph',
+       caption='Layer-wise attention patterns for the LFP data of one subject (SuperChris). Each panel shows the same connectivity graph with the learned depth-confidence score Γ of that layer, the edge-level attention scores, and node-wise summed attention weights; warmer colours indicate higher attention.'),
+  dict(file='mgmt-wiring', ext='png', w=1800, h=910,
+       alt='Forest plot of accuracy differences between cosine wiring and two control wirings',
+       lead='Controlled wiring study against matched controls',
+       caption='Controlled wiring study. Mean accuracy difference between cosine wiring and two matched controls, count-matched random wiring and degree-preserving rewiring, with pointwise 95% paired-bootstrap intervals. Source representations and edge budgets are frozen and only the final predictor is retrained. Starred tasks pass Holm correction across the 14-test family.'),
+ ],
+ 'crossgraph': [
+  dict(file='crossgraph-network', ext='jpg', w=1800, h=826,
+       alt='Network map of supernodes and edges across five rats’ hippocampal recordings',
+       lead='Cross-animal supernode and edge map, five rats (CA1)',
+       caption='Cross-animal supernode and edge frequency map from MGMT on hippocampal CA1 recordings from five rats. Each dashed box is one animal; node size and colour give the supernode selection frequency and line colour gives the edge frequency. High-frequency supernodes and edges cluster in distal CA1, and cross-animal superedges mainly link distal regions across animals.'),
+  dict(file='crossgraph-baselines', ext='png', w=1800, h=557,
+       alt='Bar charts of test accuracy for MGMT and baselines on LFP and Alzheimer’s data',
+       lead='Test accuracy against baselines on two datasets',
+       caption='Test accuracies of MGMT and baseline models on the LFP neural-decoding dataset and the Alzheimer’s disease dataset. Each bar is the average over five folds with its standard error. MGMT outperforms single-source and fusion baselines in both applications.'),
+ ],
+ 'polaris': [
+  dict(file='polaris-architecture', ext='png', w=931, h=901,
+       alt='POLARIS orchestration diagram with ingestion, planning, execution and reconciliation stages',
+       lead='POLARIS orchestration with governed plan selection',
+       caption='Overview of POLARIS orchestration with governed plan selection. Raw inputs are normalised, a planner proposes several typed execution plans, and a reasoning agent scores them and selects one. The chosen plan runs as a DAG: a document parser and a data validator run with a bounded repair loop, after which only the required data-processing and reconciliation agents are invoked.'),
+  dict(file='polaris-extraction', ext='png', w=1800, h=884,
+       alt='Grouped bars of precision, recall and F1 across four invoice scenarios',
+       lead='Extraction precision, recall and F1 by scenario',
+       caption='Extraction performance by scenario. Grouped bars show precision, recall and F1 for unknown vendor, layout drift and noise, clean, and month-end settings. Recall stays high under noise with a dip in precision, and the clean and compliant settings are well balanced.'),
+  dict(file='polaris-trace', ext='png', w=1800, h=686,
+       alt='Trace of a POLARIS run on a low-quality invoice from input to approval decision',
+       lead='End-to-end plan trace with validator-gated repair',
+       caption='POLARIS on a synthetic low-quality invoice: the input is normalised into a canonical record, the planner proposes typed plans and the reasoning agent selects one, a bounded parser–validator loop issues targeted feedback, and the reconciliation stage returns an approval decision with its rationale.'),
+ ],
+ 'aema': [
+  dict(file='aema-stability', ext='png', w=1800, h=1166,
+       alt='Box plots comparing score dispersion of AEMA and a single LLM judge over 30 runs',
+       lead='Score stability: AEMA vs. a single LLM judge (30 runs)',
+       caption='Stability of final scores across 30 repeated evaluations. AEMA shows much lower dispersion than a single LLM-as-a-judge.'),
+  dict(file='aema-framework', ext='png', w=1800, h=448,
+       alt='AEMA framework diagram with planning, prompt-refinement, evaluation and final-report agents',
+       lead='AEMA framework overview',
+       caption='Overview of AEMA. A planning agent builds the evaluation plan, a prompt-refinement agent retrieves and prepares examples, evaluation agents score intermediate actions, and a final report agent aggregates the results into an auditable, reproducible report.'),
+ ],
+}
+SHORT_TITLES = {'scope': 'SCOPE', 'fbnn': 'Scaling Up Bayesian Neural Networks (TMLR)', 'mgmt': 'MGMT · Heterogeneous Graph Alignment', 'crossgraph': 'MGMT · Cross-Graph Functional Alignment', 'polaris': 'POLARIS', 'aema': 'AEMA'}
+THEME_IMAGES = {'uncertainty': 'theme-uncertainty.png', 'science': 'theme-science.jpg', 'agents': 'theme-agents.png'}
+CARD_W, CARD_H = 900, 506
+
+
+def figure_visual(p):
+    figs = FIGURES.get(p['id'])
+    if not figs:
+        return f'<a class="paper-visual" href="{p["url"]}" tabindex="-1" aria-hidden="true"><img src="/images/research/{p["id"]}.svg" width="640" height="360" alt="" loading="lazy"></a>'
+    first, n = figs[0], len(figs)
+    plural = 'figure' if n == 1 else 'figures'
+    label = f"View {n} {plural} from {SHORT_TITLES[p['id']]}"
+    return f'''<figure class="paper-visual paper-figure"><a class="figure-open" href="/images/figures/{first['file']}.{first['ext']}" data-paper="{p['id']}" data-index="0" aria-label="{escape(label)}"><img src="/images/figures/{first['file']}-card.{first['ext']}" width="{CARD_W}" height="{CARD_H}" alt="{escape(first['alt'])}" loading="lazy"></a>
+      <figcaption>{escape(first['lead'])}<span class="figure-count">{n} {plural} <span aria-hidden="true">⤢</span></span></figcaption></figure>'''
+
+
+def figure_link(p):
+    figs = FIGURES.get(p['id'])
+    if not figs:
+        return ''
+    n = len(figs)
+    return f'''<a class="figure-open" href="/images/figures/{figs[0]['file']}.{figs[0]['ext']}" data-paper="{p['id']}" data-index="0">Figures ({n}) <span aria-hidden="true">⤢</span></a>'''
+
+
+def lightbox_html():
+    data = {p['id']: dict(title=p['title'], short=SHORT_TITLES[p['id']], url=p['url'],
+                          figures=[dict(src=f"/images/figures/{f['file']}.{f['ext']}", w=f['w'], h=f['h'], alt=f['alt'], caption=f['caption']) for f in FIGURES[p['id']]])
+            for p in papers if p['id'] in FIGURES}
+    payload = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
+    return f'''<dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title">
+<div class="lightbox-panel"><div class="lightbox-bar"><p class="lightbox-title" id="lightbox-title"></p><button type="button" class="lightbox-close" data-close aria-label="Close figure viewer">✕</button></div>
+<div class="lightbox-stage"><button type="button" class="lightbox-nav prev" data-step="-1" aria-label="Previous figure">‹</button><img id="lightbox-image" alt=""><button type="button" class="lightbox-nav next" data-step="1" aria-label="Next figure">›</button></div>
+<div class="lightbox-caption"><p class="lightbox-counter" id="lightbox-counter"></p><p id="lightbox-text"></p><a class="text-link" id="lightbox-link" href="#">Open paper <span aria-hidden="true">↗</span></a></div></div></dialog>
+<script type="application/json" id="figure-data">{payload}</script>'''
+
+
+
 THEMES = [
     dict(id='uncertainty', title='Bayesian ML & uncertainty',
          question='How can models express what they do not know?',
@@ -85,14 +204,15 @@ def paper_html(p, compact=False):
     level = 'h3' if compact else 'h2'
     authors = escape(p['authors']).replace('Zahra Moslemi', '<strong>Zahra Moslemi</strong>')
     return f'''<article class="paper" id="{p['id']}" data-topics="{p['topics']}">
-      <a class="paper-visual" href="{p['url']}" tabindex="-1" aria-hidden="true"><img src="/images/research/{p['id']}.svg" width="640" height="360" alt="" loading="lazy"></a>
+      {figure_visual(p)}
       <div class="paper-content"><p class="paper-meta">{p['year']} <span aria-hidden="true">/</span> {p['type']}</p>
       <{level}><a href="{p['url']}">{escape(p['title'])}</a></{level}>
       <p class="authors">{authors}</p>
       <p class="venue">{escape(p['venue'])}</p>
       <p class="summary">{escape(p['summary'])}</p>
       <div class="paper-links"><a href="{p['url']}">Paper <span aria-hidden="true">↗</span></a>
-      {f'<a href="{p["pdf"]}">PDF <span aria-hidden="true">↗</span></a>' if p['pdf'] else ''}</div></div></article>'''
+      {f'<a href="{p["pdf"]}">PDF <span aria-hidden="true">↗</span></a>' if p['pdf'] else ''}
+      {figure_link(p)}</div></div></article>'''
 
 
 def shell(title, path, body):
@@ -118,7 +238,7 @@ def shell(title, path, body):
 
 def theme_card(theme, number):
     return f'''<a class="theme-card {theme['id']}" href="#theme-{theme['id']}">
-      <img src="/images/research/{theme['id']}.svg" alt="" width="640" height="360">
+      <img src="/images/figures/{THEME_IMAGES[theme['id']]}" alt="" width="1200" height="675">
       <div class="theme-caption"><span class="theme-index">0{number}</span><h3>{escape(theme['title'])}</h3><span class="theme-arrow" aria-hidden="true">↓</span></div>
       <p>{escape(theme['question'])}</p></a>'''
 
@@ -165,10 +285,10 @@ home+='''<div class="experience-list">
 <li>Henry Samueli Endowed Fellowship<span>University of California, Irvine · 2024</span></li>
 </ul></div></section>
 '''
-home+='''<section class="contact-section" id="contact"><div><h2>Let’s connect</h2><p>I’m interested in research scientist, applied scientist, research engineering, and postdoctoral opportunities in machine learning, biomedical AI, and AI for science.</p></div><a class="button" href="mailto:zmoslemi@uci.edu">Email me <span aria-hidden="true">↗</span></a></section></div>'''
+home+='''<section class="contact-section" id="contact"><div><h2>Let’s connect</h2><p>I’m interested in research scientist, applied scientist, research engineering, and postdoctoral opportunities in machine learning, biomedical AI, and AI for science.</p></div><a class="button" href="mailto:zmoslemi@uci.edu">Email me <span aria-hidden="true">↗</span></a></section></div>'''+lightbox_html()
 
 pubbody='''<section class="page-intro"><p class="eyebrow">Research</p><h1>Publications &amp; preprints</h1><p>Statistical machine learning, biomedical AI, and reliable agentic systems. Publication and review status are listed with each paper.</p><a class="text-link" href="'''+SCHOLAR+'''">Google Scholar <span aria-hidden="true">↗</span></a></section>
-<section class="publications-page" aria-label="Research papers"><div class="filters" aria-label="Filter papers by topic"><button data-filter="all" aria-pressed="true">All papers</button><button data-filter="uncertainty" aria-pressed="false">Bayesian ML &amp; uncertainty</button><button data-filter="science" aria-pressed="false">Health &amp; science</button><button data-filter="agents" aria-pressed="false">LLM agents</button></div><p class="result-count" id="result-count" role="status" aria-live="polite">8 papers</p>'''+''.join(paper_html(p) for p in papers)+'''</section>'''
+<section class="publications-page" aria-label="Research papers"><div class="filters" aria-label="Filter papers by topic"><button data-filter="all" aria-pressed="true">All papers</button><button data-filter="uncertainty" aria-pressed="false">Bayesian ML &amp; uncertainty</button><button data-filter="science" aria-pressed="false">Health &amp; science</button><button data-filter="agents" aria-pressed="false">LLM agents</button></div><p class="result-count" id="result-count" role="status" aria-live="polite">8 papers</p>'''+''.join(paper_html(p) for p in papers)+'''</section>'''+lightbox_html()
 
 cvbody='''<section class="page-intro"><p class="eyebrow">Curriculum vitae</p><h1>Research &amp; experience</h1><p>My research, publications, education, and industry experience. Updated October 2026.</p></section>
 <section class="cv-summary"><a class="button primary" href="/files/Zahra_Moslemi_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
@@ -184,6 +304,7 @@ for filename,path,title,body in pages:
     target=PREVIEW/path.strip('/')/'index.html';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(html)
 assets=['assets/css/portfolio.css','assets/js/portfolio.js','images/profile.jpg','images/zm-monogram.svg','files/Zahra_Moslemi_CV.pdf']
 assets += [str(p.relative_to(ROOT)) for p in sorted((ROOT/'images/research').glob('*.svg'))]
+assets += [str(p.relative_to(ROOT)) for p in sorted((ROOT/'images/figures').glob('*')) if p.suffix in ('.png', '.jpg')]
 for filename in assets:
     source=ROOT/filename
     if source.exists():

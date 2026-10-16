@@ -57,3 +57,32 @@ The full legacy Jekyll dependency build is not installed in this workspace.
 Verification: desktop 1280px and mobile 390px; theme anchors; mobile navigation;
 publication filters; valid HTML nesting and unique IDs; local links and SVG XML;
 no horizontal overflow or missing images. The public CV hash is unchanged.
+
+## Paper figures and figure viewer (October 16, 2026)
+
+- Each of the six first-author or co-first-author papers now shows a real figure
+  from the paper instead of a schematic. Card images are 16:9 crops of the first
+  figure (`images/figures/<name>-card.<ext>`, 900×506); clicking a card or the
+  "Figures (n)" link opens a viewer (`<dialog>` in `assets/js/portfolio.js`) that
+  cycles through every figure of that paper at full size with its caption. The
+  three research-direction cards use crops of the SCOPE, MGMT and POLARIS figures.
+- Figure records (file, size, alt text, one-line lead, caption) live in `FIGURES`
+  in `scripts/build_portfolio.py`; captions paraphrase the papers' own captions.
+  STRONG and OCT keep their schematic SVGs because their figures belong to the
+  journals.
+- Provenance of `images/figures/` (full figures are at most 1800–2000 px wide):
+  - `scope-*`: arXiv:2610.17146 source (`fig_sim2_regions_v4.pdf`,
+    `fig_headline_v7.pdf`, `fig_scope_overview.pdf`), rendered with Ghostscript.
+  - `fbnn-*`: arXiv:2312.11799 source (`gp.png`, `sim_uq.png`, `spduuup.png`).
+  - `mgmt-architecture`: Figure 1 of the TMLR submission source
+    (`figures/mgmt_figure1_drawio.pdf`); `mgmt-layers`: arXiv:2601.22593
+    `mgmt_layers.png`; `mgmt-wiring`: TMLR submission
+    `wiring_paired_lfp_verified.pdf`.
+  - `crossgraph-*`: arXiv:2601.22593 (`lfp_network.jpeg`, `baselines.png`).
+  - `polaris-*`: arXiv:2601.11816 (`architecture.png`,
+    `polaris_extraction_by_scenario_bar.png`, `POLARIS_RealCase_BadQuality.pdf`).
+  - `aema-*`: arXiv:2601.11903 (`Stability.png`, `AEMA_Framework.pdf`).
+- To replace a figure: drop the full image and a 900×506 card crop into
+  `images/figures/`, update its `FIGURES` record (including `w`/`h`), and run
+  `python3 scripts/build_portfolio.py`. The rat task schematic from the MGMT paper
+  is not used on the site because it is adapted from another publication.
