@@ -11,7 +11,6 @@ import json
 ROOT = Path(__file__).resolve().parents[1]
 PREVIEW = ROOT / '_portfolio_preview'
 SITE = 'https://zahramoslemi.github.io'
-CV = '/files/Zahra_Moslemi_CV.pdf'
 SCHOLAR = 'https://scholar.google.com/citations?user=jbJTkg4AAAAJ&hl=en'
 
 papers = [
@@ -239,7 +238,7 @@ def theme_section(theme, number):
 
 home=f'''<section class="profile-band" aria-labelledby="intro-title"><div class="wrap profile">
 <img class="portrait" src="/images/profile.jpg" width="288" height="335" alt="Zahra Moslemi" fetchpriority="high">
-<div class="profile-name"><p class="hello">Hello, I’m</p><h1 id="intro-title">Zahra Moslemi</h1><a class="profile-email" href="mailto:zmoslemi@uci.edu">zmoslemi@uci.edu</a><div class="profile-links"><a href="{SCHOLAR}">Scholar</a><a href="https://github.com/zahraMoslemi">GitHub</a><a href="https://www.linkedin.com/in/zahra-moslemi/">LinkedIn</a><a href="{CV}">CV <span aria-hidden="true">↓</span></a></div></div>
+<div class="profile-name"><p class="hello">Hello, I’m</p><h1 id="intro-title">Zahra Moslemi</h1><a class="profile-email" href="mailto:zmoslemi@uci.edu">zmoslemi@uci.edu</a><div class="profile-links"><a href="{SCHOLAR}">Scholar</a><a href="https://github.com/zahraMoslemi">GitHub</a><a href="https://www.linkedin.com/in/zahra-moslemi/">LinkedIn</a></div></div>
 <div class="affiliation"><p>PhD candidate in Statistics</p><p>University of California, Irvine</p><p class="graduation">Expected January 2027</p></div></div></section>
 <div class="wrap home-content"><section class="introduction" aria-label="About me"><p>I work at the intersection of <strong>statistical machine learning, biomedical AI, and reliable agentic systems</strong>. At UC Irvine, I am advised by <a href="https://www.ics.uci.edu/~babaks/">Prof. Babak Shahbaba</a>. My research brings Bayesian inference and uncertainty quantification to problems where data are limited, heterogeneous, or shifting.</p>
 <div class="research-statement">I study how to make machine learning <em>more reliable</em>, from scientific data to agent workflows.</div>
@@ -247,7 +246,6 @@ home=f'''<section class="profile-band" aria-labelledby="intro-title"><div class=
 
 <section class="research-overview" id="research" aria-labelledby="research-title"><div class="section-heading"><h2 id="research-title">Research directions</h2><span>Explore a theme to see related work</span></div><div class="theme-grid">{''.join(theme_card(theme,i) for i,theme in enumerate(THEMES,1))}</div></section>
 
-<p class="collaboration-note"><strong>Current collaboration.</strong> With Google Research, I study time-series foundation models and uncertainty-aware model selection for sparse longitudinal data, including evaluation under missingness and distribution shift.</p>
 <div class="highlights-heading"><h2>Research highlights</h2><a class="text-link" href="/publications/">All publications &amp; preprints <span aria-hidden="true">↗</span></a></div>
 {''.join(theme_section(theme,i) for i,theme in enumerate(THEMES,1))}
 
@@ -256,14 +254,14 @@ home=f'''<section class="profile-band" aria-labelledby="intro-title"><div class=
 
 home+='''<div class="experience-list">
 <article class="experience-row"><div class="experience-date">Summer 2026 · San Mateo</div><div><h3>ClearNote Health</h3><p class="role">Research Scientist Intern</p><p>Developed a biology-informed vision transformer for pancreatic-cancer cfDNA fragmentomics using joint-embedding prediction. Worked on conformal and Bayesian methods for uncertainty-aware biomedical prediction.</p></div></article>
-<article class="experience-row"><div class="experience-date">Summer 2025 · Boston</div><div><h3>Accenture · Center for Advanced AI</h3><p class="role">Research Scientist Intern · T-Mobile collaboration</p><p>Built multi-agent planning and evaluation workflows with AutoGen and DSPy, and integrated human review through Azure AI Foundry. This work contributed to POLARIS and AEMA, presented at AAAI 2026 workshops.</p></div></article>
+<article class="experience-row"><div class="experience-date">Summer 2025 · Boston</div><div><h3>Accenture · Center for Advanced AI</h3><p class="role">Research Scientist Intern</p><p>Built multi-agent planning and evaluation workflows with AutoGen and DSPy, and integrated human review through Azure AI Foundry. This work contributed to POLARIS and AEMA, presented at AAAI 2026 workshops.</p></div></article>
 <article class="experience-row"><div class="experience-date">Summer 2024 · San Mateo</div><div><h3>ClearNote Health</h3><p class="role">Research Scientist Intern</p><p>Combined diffusion-based synthetic data with Perceiver IO for biomedical learning under class imbalance and data scarcity. Developed reproducible experiments and evaluated calibration and robustness under distribution shift.</p></div></article></div>
 <div class="skills" aria-label="Selected technical skills"><span>Python</span><span>PyTorch</span><span>SQL</span><span>Hugging Face</span><span>DSPy</span><span>AutoGen</span><span>Azure AI Foundry</span><span>Nextflow</span></div></section>
 
 <section class="section two-col" id="background"><div><div class="section-heading"><div><h2>Education</h2></div></div>
 <div class="education-item"><h3>PhD in Statistics</h3><p>University of California, Irvine</p><p class="dates">2023–present · Expected January 2027</p><p>Research focus: machine learning and Bayesian inference</p></div>
 <div class="education-item"><h3>MS in Statistics</h3><p>University of California, Irvine</p><p class="dates">2021–2023</p></div>
-<div class="education-item"><h3>BS in Industrial Engineering</h3><p>Sharif University of Technology</p><p class="dates">2016–2020 · Ranked 4th of 200</p></div></div>
+<div class="education-item"><h3>BS in Industrial Engineering</h3><p>Sharif University of Technology</p><p class="dates">2016–2020</p></div></div>
 <div><div class="section-heading"><div><h2>Honors &amp; service</h2></div></div><ul class="recognition-list">
 <li>Best Poster Runner-up<span>NeurIPS 2025 · AI4Science Workshop</span></li>
 <li>Best Poster Award<span>NeurIPS 2025 · New Perspectives in Graph Machine Learning Workshop</span></li>
@@ -277,8 +275,7 @@ pubbody='''<section class="page-intro"><p class="eyebrow">Research</p><h1>Public
 <section class="publications-page" aria-label="Research papers"><div class="filters" aria-label="Filter papers by topic"><button data-filter="all" aria-pressed="true">All papers</button><button data-filter="uncertainty" aria-pressed="false">Bayesian ML &amp; uncertainty</button><button data-filter="science" aria-pressed="false">Health &amp; science</button><button data-filter="agents" aria-pressed="false">LLM agents</button></div><p class="result-count" id="result-count" role="status" aria-live="polite">8 papers</p>'''+''.join(paper_html(p) for p in papers)+'''</section>'''+lightbox_html()
 
 cvbody='''<section class="page-intro"><p class="eyebrow">Curriculum vitae</p><h1>Research &amp; experience</h1><p>My research, publications, education, and industry experience. Updated October 2026.</p></section>
-<section class="cv-summary"><a class="button primary" href="/files/Zahra_Moslemi_CV.pdf">Download CV <span aria-hidden="true">↓</span></a>
-<dl><dt>Education</dt><dd>PhD candidate in Statistics, UC Irvine. Expected January 2027. MS in Statistics, UC Irvine; BS in Industrial Engineering, Sharif University of Technology.</dd><dt>Research</dt><dd>Bayesian machine learning, uncertainty quantification, biomedical AI, graph representation learning, and LLM agents and evaluation.</dd><dt>Industry</dt><dd>Research Scientist internships at ClearNote Health (2024 and 2026) and Accenture’s Center for Advanced AI (2025).</dd><dt>Opportunities</dt><dd>Research scientist, applied scientist, research engineering, and postdoctoral positions. Open to U.S. locations.</dd><dt>Contact</dt><dd><a href="mailto:zmoslemi@uci.edu">zmoslemi@uci.edu</a></dd></dl></section>'''
+<section class="cv-summary"><dl><dt>Education</dt><dd>PhD candidate in Statistics, UC Irvine. Expected January 2027. MS in Statistics, UC Irvine; BS in Industrial Engineering, Sharif University of Technology.</dd><dt>Research</dt><dd>Bayesian machine learning, uncertainty quantification, biomedical AI, graph representation learning, and LLM agents and evaluation.</dd><dt>Industry</dt><dd>Research Scientist internships at ClearNote Health (2024 and 2026) and Accenture’s Center for Advanced AI (2025).</dd><dt>Opportunities</dt><dd>Research scientist, applied scientist, research engineering, and postdoctoral positions. Open to U.S. locations.</dd><dt>Contact</dt><dd><a href="mailto:zmoslemi@uci.edu">zmoslemi@uci.edu</a></dd></dl></section>'''
 
 # Keep generated documents as HTML so Jekyll does not run them through Markdown.
 pages=[('_pages/about.html','/','Research & Applied Machine Learning',home),('_pages/publications.html','/publications/','Publications',pubbody),('_pages/cv.html','/cv/','Curriculum Vitae',cvbody)]
@@ -288,7 +285,7 @@ for filename,path,title,body in pages:
     extra='redirect_from:\n  - /about/\n  - /about.html\n' if path=='/' else ''
     (ROOT/filename).write_text(f'---\nlayout: null\ntitle: "{title}"\npermalink: {path}\n{extra}---\n'+html)
     target=PREVIEW/path.strip('/')/'index.html';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(html)
-assets=['assets/css/portfolio.css','assets/js/portfolio.js','images/profile.jpg','images/zm-monogram.svg','files/Zahra_Moslemi_CV.pdf']
+assets=['assets/css/portfolio.css','assets/js/portfolio.js','images/profile.jpg','images/zm-monogram.svg']
 assets += [str(p.relative_to(ROOT)) for p in sorted((ROOT/'images/research').glob('*.svg'))]
 assets += [str(p.relative_to(ROOT)) for p in sorted((ROOT/'images/figures').glob('*')) if p.suffix in ('.png', '.jpg', '.svg')]
 for filename in assets:

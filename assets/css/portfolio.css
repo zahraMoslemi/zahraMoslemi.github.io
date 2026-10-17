@@ -225,8 +225,6 @@ button { cursor: pointer; }
   a { color: inherit; }
 }
 
-.collaboration-note { font-size: 14px; color: var(--muted); margin: 24px 0 0; padding-left: 15px; border-left: 2px solid var(--line); }
-.collaboration-note strong { color: #434b54; }
 
 /* Paper figures and the figure viewer. Card images are 16:9 crops of the first
    figure; the viewer shows every figure at full size with its caption. */
