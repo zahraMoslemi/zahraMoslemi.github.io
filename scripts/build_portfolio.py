@@ -71,32 +71,10 @@ dict(id='oct', year='2024', type='Journal', topics='science',
 # Card images are 16:9 crops named <file>-card.<ext>; full figures keep their aspect.
 FIGURES = {
  'scope': [
-  dict(file='scope-regions', ext='png', w=1650, h=579,
-       alt='SCOPE and CQR prediction regions on a bimodal simulation',
-       lead='SCOPE vs. CQR prediction regions on a bimodal simulation',
-       caption='Density-level geometry in Simulation 2. (a, b) SCOPE and conformalized quantile regression (CQR) prediction regions as functions of x₁, with dots marking the population oracle boundaries. (c) At an input where the target density is bimodal, SCOPE follows both modes while CQR spans the low-density gap between them.'),
-  dict(file='scope-headline', ext='png', w=1800, h=512,
-       alt='Three-panel summary of SCOPE results across eight benchmarks',
-       lead='Main empirical summary across eight benchmarks',
-       caption='Main empirical summary. (a) Test negative log-likelihood relative to the HMC baseline across eight benchmarks, with median UCI runtimes as labels. (b) Predictive effective sample size per second relative to HMC on six UCI datasets. (c) Independently calibrated prediction-region size relative to HMC with conformal calibration; SCOPE/Split carries the standard split-conformal marginal guarantee. Points and bars are medians; whiskers are ranges.'),
-  dict(file='scope-overview', ext='png', w=1800, h=729,
-       alt='Flow diagram of the SCOPE procedure',
-       lead='SCOPE pipeline overview',
-       caption='SCOPE overview. For each candidate reference point, guide observations determine an active parameter subspace; slice MCMC and a projected variational completion produce a candidate predictive distribution. The candidate with the lower negative log-likelihood on the guide set is selected, and a quantile of the guide scores sets its prediction region. SCOPE/Split calibrates the final threshold on an independent set.'),
- ],
- 'fbnn': [
-  dict(file='fbnn-mixture', ext='png', w=1478, h=489,
-       alt='Samples from a 25-component Gaussian mixture under SGHMC and pCN',
-       lead='Sampling a 25-Gaussian mixture: SGHMC vs. pCN',
-       caption='Sampling from a mixture of 25 Gaussians (left, 200k samples). Stochastic-gradient HMC (middle) explores the space broadly, while the preconditioned Crank–Nicolson sampler (right) concentrates on the high-density regions and captures the modes precisely.'),
-  dict(file='fbnn-intervals', ext='png', w=576, h=436,
-       alt='Predictive intervals from BNN and FBNN against the true output',
-       lead='Predictive intervals along the first principal component',
-       caption='Predictive uncertainty on simulated regression data, plotted along the first principal component. The 95% credible bands and mean predictions of a standard BNN and of FBNN are compared with the 95% interval and mean of the true output.'),
-  dict(file='fbnn-speedup', ext='png', w=1800, h=897,
-       alt='Bar charts of sampling speedup for BNN methods on eight datasets',
-       lead='Sampling speedup across eight datasets',
-       caption='Sampling speedup of Bayesian neural network methods across the tested datasets, ordered by efficiency within each dataset. FBNN with the SGHMC–pCN combination achieves the highest speedup on every dataset except Wine Quality, where it ranks second.'),
+  dict(file='scope-figure', ext='svg', w=1700, h=900,
+       alt='Three-stage diagram of SCOPE: score-guided directions, slice sampling with variational completion, conformal calibration',
+       lead='How SCOPE guides, samples and calibrates',
+       caption='SCOPE in three stages. (1) Score gradients on a held-out guide set, weighted toward the target coverage level, identify the few parameter directions that move the prediction-region boundary; these are generally not the directions of largest posterior variance. (2) Slice MCMC explores only that r-dimensional subspace while a projected variational approximation carries the remaining directions, giving a completed predictive distribution at a fraction of the cost of full MCMC. (3) The same guide set selects the better anchor and sets the region’s density level through a conformal quantile; SCOPE/Split uses an independent calibration set for finite-sample validity.'),
  ],
  'mgmt': [
   dict(file='mgmt-architecture', ext='png', w=2000, h=1036,
@@ -112,43 +90,45 @@ FIGURES = {
        lead='Controlled wiring study against matched controls',
        caption='Controlled wiring study. Mean accuracy difference between cosine wiring and two matched controls, count-matched random wiring and degree-preserving rewiring, with pointwise 95% paired-bootstrap intervals. Source representations and edge budgets are frozen and only the final predictor is retrained. Starred tasks pass Holm correction across the 14-test family.'),
  ],
- 'crossgraph': [
-  dict(file='crossgraph-network', ext='jpg', w=1800, h=826,
-       alt='Network map of supernodes and edges across five rats’ hippocampal recordings',
-       lead='Cross-animal supernode and edge map, five rats (CA1)',
-       caption='Cross-animal supernode and edge frequency map from MGMT on hippocampal CA1 recordings from five rats. Each dashed box is one animal; node size and colour give the supernode selection frequency and line colour gives the edge frequency. High-frequency supernodes and edges cluster in distal CA1, and cross-animal superedges mainly link distal regions across animals.'),
-  dict(file='crossgraph-baselines', ext='png', w=1800, h=557,
-       alt='Bar charts of test accuracy for MGMT and baselines on LFP and Alzheimer’s data',
-       lead='Test accuracy against baselines on two datasets',
-       caption='Test accuracies of MGMT and baseline models on the LFP neural-decoding dataset and the Alzheimer’s disease dataset. Each bar is the average over five folds with its standard error. MGMT outperforms single-source and fusion baselines in both applications.'),
- ],
  'polaris': [
-  dict(file='polaris-architecture', ext='png', w=931, h=901,
-       alt='POLARIS orchestration diagram with ingestion, planning, execution and reconciliation stages',
-       lead='POLARIS orchestration with governed plan selection',
-       caption='Overview of POLARIS orchestration with governed plan selection. Raw inputs are normalised, a planner proposes several typed execution plans, and a reasoning agent scores them and selects one. The chosen plan runs as a DAG: a document parser and a data validator run with a bounded repair loop, after which only the required data-processing and reconciliation agents are invoked.'),
-  dict(file='polaris-extraction', ext='png', w=1800, h=884,
-       alt='Grouped bars of precision, recall and F1 across four invoice scenarios',
-       lead='Extraction precision, recall and F1 by scenario',
-       caption='Extraction performance by scenario. Grouped bars show precision, recall and F1 for unknown vendor, layout drift and noise, clean, and month-end settings. Recall stays high under noise with a dip in precision, and the clean and compliant settings are well balanced.'),
-  dict(file='polaris-trace', ext='png', w=1800, h=686,
-       alt='Trace of a POLARIS run on a low-quality invoice from input to approval decision',
-       lead='End-to-end plan trace with validator-gated repair',
-       caption='POLARIS on a synthetic low-quality invoice: the input is normalised into a canonical record, the planner proposes typed plans and the reasoning agent selects one, a bounded parser–validator loop issues targeted feedback, and the reconciliation stage returns an approval decision with its rationale.'),
+  dict(file='polaris-figure', ext='svg', w=1700, h=900,
+       alt='Four-stage diagram of POLARIS: normalize input, typed plan selection, governed DAG execution with repair loop and guardrails, reconciled outputs',
+       lead='Typed planning and governed execution',
+       caption='POLARIS treats back-office automation as typed plan synthesis and validated execution. Inputs are normalised into one typed record; a planner proposes several type-checked DAGs and a rubric-guided reasoning agent selects a single compliant plan; execution runs a document parser and data validator inside a bounded repair loop, invokes only the processors the plan requires, and applies compiled policy guardrails that block or route side effects before they occur; reconciliation returns a decision with its rationale, a structured report and a full execution trace.'),
  ],
  'aema': [
-  dict(file='aema-stability', ext='png', w=1800, h=1166,
-       alt='Box plots comparing score dispersion of AEMA and a single LLM judge over 30 runs',
-       lead='Score stability: AEMA vs. a single LLM judge (30 runs)',
-       caption='Stability of final scores across 30 repeated evaluations. AEMA shows much lower dispersion than a single LLM-as-a-judge.'),
-  dict(file='aema-framework', ext='png', w=1800, h=448,
-       alt='AEMA framework diagram with planning, prompt-refinement, evaluation and final-report agents',
-       lead='AEMA framework overview',
-       caption='Overview of AEMA. A planning agent builds the evaluation plan, a prompt-refinement agent retrieves and prepares examples, evaluation agents score intermediate actions, and a final report agent aggregates the results into an auditable, reproducible report.'),
+  dict(file='aema-figure', ext='svg', w=1700, h=900,
+       alt='Diagram of AEMA: human request, planning agent, prompt-refinement agent, evaluation agents scoring each workflow step, final report agent, oversight loop',
+       lead='Process-aware, auditable evaluation',
+       caption='AEMA evaluates agentic workflows as a process rather than a single response. From a human evaluator’s business context and specification, a planning agent builds an executable evaluation plan, a prompt-refinement agent prepares exemplars and settings for each step, evaluation agents score every intermediate action of the workflow under test with feedback and evidence, and a final report agent aggregates everything into an auditable, reproducible report. Human oversight closes the loop, and final scores vary far less across repeated runs than with a single LLM-as-a-judge.'),
+ ],
+ 'crossgraph': [
+  dict(file='crossgraph-figure', ext='svg', w=1700, h=900,
+       alt='Three-stage diagram: graphs from five rats’ CA1 recordings, attention-based node selection, meta-graph alignment and odor decoding',
+       lead='From five animals’ recordings to one decoded odor',
+       caption='Cross-graph functional alignment for neural decoding. Local field potentials from hippocampal CA1 of five rats, recorded during an odor-sequence memory task, become one functional-connectivity graph per animal with different electrode sets. A depth-aware graph transformer scores and keeps the informative electrodes of each animal with their induced edges; similarity links join the selected nodes across animals into a meta-graph that a shared transformer decodes into the odor label. Selection frequencies over fitted models show which electrodes matter, with distal CA1 recurring across animals.'),
+ ],
+ 'fbnn': [
+  dict(file='fbnn-figure', ext='svg', w=1700, h=900,
+       alt='Three-stage diagram of FBNN: calibration run, neural-network emulator of the log-posterior, pCN sampling with the emulator',
+       lead='Calibration, emulation, sampling',
+       caption='The calibration–emulation–sampling strategy behind FBNN. A short SGHMC run collects a few hundred weight samples with their log-posterior values; a neural-network emulator is trained on these pairs to approximate the map from weights to log-posterior; the dimension-robust pCN sampler then draws posterior samples using the emulator instead of a full pass over the data, keeping the predictive accuracy and uncertainty of the full BNN at much lower cost.'),
+ ],
+ 'strong': [
+  dict(file='strong-figure', ext='svg', w=1700, h=900,
+       alt='Three-stage diagram of the STRONG study: enrollment and follow-up timeline, candidate variants and outcomes, association findings',
+       lead='A one-year multicenter genetic study of recovery',
+       caption='Design of the STRONG study. Adults with stroke were enrolled at 28 U.S. stroke centers (763 enrollees) and followed at 3, 6 and 12 months. Candidate variants were tested for association with motor and functional recovery (ApoE ε4, BDNF, a dopamine polygenic score) and with stress-related outcomes (seven variants, examined against post-stroke stress), using regression models adjusted for stroke severity, age, sex and ancestry with Holm–Bonferroni correction. BDNF rs6265 was associated with poorer 12-month cognition; ACE, FAAH and COMT variants modified how post-stroke stress related to depression and PTSD; and the GISCOME rs1842681 association with 3-month mRS replicated.'),
+ ],
+ 'oct': [
+  dict(file='oct-figure', ext='svg', w=1700, h=900,
+       alt='Three-stage diagram: few labeled OCT scans, deep triplet network with shared encoder and embedding space, nearest-class detection',
+       lead='Metric learning for OCT with few labels',
+       caption='Retinal abnormality detection from few labeled OCT scans. Instead of training a classifier directly on scarce images, a deep triplet network with a shared VGG16-based encoder learns an embedding in which scans of the same class (normal, drusen, CNV, DME) are pulled together and other classes pushed apart, using a conditional triplet loss adapted to small samples; a query scan is then labelled by its nearest class in the embedding space. The approach reaches 92.81% accuracy, above published DenseNet, ResNet and Inception baselines.'),
  ],
 }
-SHORT_TITLES = {'scope': 'SCOPE', 'fbnn': 'Scaling Up Bayesian Neural Networks (TMLR)', 'mgmt': 'MGMT · Heterogeneous Graph Alignment', 'crossgraph': 'MGMT · Cross-Graph Functional Alignment', 'polaris': 'POLARIS', 'aema': 'AEMA'}
-THEME_IMAGES = {'uncertainty': 'theme-uncertainty.png', 'science': 'theme-science.jpg', 'agents': 'theme-agents.png'}
+SHORT_TITLES = {'scope': 'SCOPE', 'fbnn': 'Scaling Up Bayesian Neural Networks (TMLR)', 'mgmt': 'MGMT · Heterogeneous Graph Alignment', 'crossgraph': 'MGMT · Cross-Graph Functional Alignment', 'polaris': 'POLARIS', 'aema': 'AEMA', 'strong': 'The STRONG Study', 'oct': 'Retinal OCT with limited data'}
+THEME_IMAGES = {'uncertainty': 'theme-uncertainty.svg', 'science': 'theme-science.svg', 'agents': 'theme-agents.svg'}
 CARD_W, CARD_H = 900, 506
 
 
@@ -158,9 +138,14 @@ def figure_visual(p):
         return f'<a class="paper-visual" href="{p["url"]}" tabindex="-1" aria-hidden="true"><img src="/images/research/{p["id"]}.svg" width="640" height="360" alt="" loading="lazy"></a>'
     first, n = figs[0], len(figs)
     plural = 'figure' if n == 1 else 'figures'
-    label = f"View {n} {plural} from {SHORT_TITLES[p['id']]}"
-    return f'''<figure class="paper-visual paper-figure"><a class="figure-open" href="/images/figures/{first['file']}.{first['ext']}" data-paper="{p['id']}" data-index="0" aria-label="{escape(label)}"><img src="/images/figures/{first['file']}-card.{first['ext']}" width="{CARD_W}" height="{CARD_H}" alt="{escape(first['alt'])}" loading="lazy"></a>
-      <figcaption>{escape(first['lead'])}<span class="figure-count">{n} {plural} <span aria-hidden="true">⤢</span></span></figcaption></figure>'''
+    label = f"View {('the' if n == 1 else n)} {plural} from {SHORT_TITLES[p['id']]}"
+    if first['ext'] == 'svg':  # designed figure: show the whole drawing, letterboxed
+        img = f'<img class="contain" src="/images/figures/{first["file"]}.svg" width="{first["w"]}" height="{first["h"]}" alt="{escape(first["alt"])}" loading="lazy">'
+    else:
+        img = f'<img src="/images/figures/{first["file"]}-card.{first["ext"]}" width="{CARD_W}" height="{CARD_H}" alt="{escape(first["alt"])}" loading="lazy">'
+    count = 'View figure' if n == 1 else f'{n} figures'
+    return f'''<figure class="paper-visual paper-figure"><a class="figure-open" href="/images/figures/{first['file']}.{first['ext']}" data-paper="{p['id']}" data-index="0" aria-label="{escape(label)}">{img}</a>
+      <figcaption>{escape(first['lead'])}<span class="figure-count">{count} <span aria-hidden="true">⤢</span></span></figcaption></figure>'''
 
 
 def figure_link(p):
@@ -168,7 +153,8 @@ def figure_link(p):
     if not figs:
         return ''
     n = len(figs)
-    return f'''<a class="figure-open" href="/images/figures/{figs[0]['file']}.{figs[0]['ext']}" data-paper="{p['id']}" data-index="0">Figures ({n}) <span aria-hidden="true">⤢</span></a>'''
+    label = 'Figure' if n == 1 else f'Figures ({n})'
+    return f'''<a class="figure-open" href="/images/figures/{figs[0]['file']}.{figs[0]['ext']}" data-paper="{p['id']}" data-index="0">{label} <span aria-hidden="true">⤢</span></a>'''
 
 
 def lightbox_html():
@@ -304,7 +290,7 @@ for filename,path,title,body in pages:
     target=PREVIEW/path.strip('/')/'index.html';target.parent.mkdir(parents=True,exist_ok=True);target.write_text(html)
 assets=['assets/css/portfolio.css','assets/js/portfolio.js','images/profile.jpg','images/zm-monogram.svg','files/Zahra_Moslemi_CV.pdf']
 assets += [str(p.relative_to(ROOT)) for p in sorted((ROOT/'images/research').glob('*.svg'))]
-assets += [str(p.relative_to(ROOT)) for p in sorted((ROOT/'images/figures').glob('*')) if p.suffix in ('.png', '.jpg')]
+assets += [str(p.relative_to(ROOT)) for p in sorted((ROOT/'images/figures').glob('*')) if p.suffix in ('.png', '.jpg', '.svg')]
 for filename in assets:
     source=ROOT/filename
     if source.exists():
